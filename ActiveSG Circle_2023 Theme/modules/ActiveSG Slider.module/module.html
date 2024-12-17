@@ -1,0 +1,75 @@
+{{ require_css('https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick.min.css') }}
+{{ require_css('https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick-theme.min.css') }}
+{{ require_js('https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js') }}
+<div class="cst-circle-slider-grp" style="background-color:rgba({{ module.background_color.color|convert_rgb }},{{ module.background_color.opacity/100 }});">
+   <div class="page-center">     
+      <div class="cst-arrow-prev">
+         <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g opacity="0.43">
+               <path d="M24 44C12.9543 44 4 35.0457 4 24C4 12.9543 12.9543 4 24 4C35.0457 4 44 12.9543 44 24C44 35.0457 35.0457 44 24 44Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+               <path d="M24 32L16 24L24 16" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+               <path d="M32 24H16" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </g>
+         </svg>
+      </div>
+      <div class="cst-slick-slider">
+         {% for item in module.add_slider_item %}
+         <div class="cst-slider-item">
+            {% set href = item.link.url.href %}
+            {% if item.link.url.type is equalto "EMAIL_ADDRESS" %}
+            {% set href = "mailto:" + href %}
+            {% endif %}
+            <a href="{{ href }}"
+               {% if item.link.open_in_new_tab %}target="_blank"{% endif %}
+               {% if item.link.rel %}rel="{{ item.link.rel }}"{% endif %}
+               >
+               <div class="inner" style="background-image:url('{{ item.image.src }}');">
+                  <div class="overlay" style="background-color:rgba({{ module.module_setting.overlay_color.color|convert_rgb }},{{ module.module_setting.overlay_color.opacity/100 }});"></div>
+                  <h4 class="ttle">
+                     {{ item.title }}
+                  </h4>
+
+               </div>
+            </a>
+         </div>
+         {% endfor %}
+      </div>   
+      <div class="cst-arrow-next">
+         <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M24 44C35.0457 44 44 35.0457 44 24C44 12.9543 35.0457 4 24 4C12.9543 4 4 12.9543 4 24C4 35.0457 12.9543 44 24 44Z" stroke="#EE2200" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M24 32L32 24L24 16" stroke="#EE2200" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M16 24H32" stroke="#EE2200" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+         </svg>
+      </div>
+   </div>
+</div>
+
+{% require_js %}
+<script>
+   $(".cst-slick-slider").slick({
+      slidesToShow: 3,
+      slidesToScroll: 1,
+      arrows: true,
+      dots:true,
+      infinite: true,
+      autoplay: false,
+      prevArrow: '.cst-arrow-prev',
+      nextArrow: '.cst-arrow-next',
+      responsive: [
+         {
+            breakpoint: 991,
+            settings: {
+               slidesToShow: 2,
+            }
+         },
+         {
+            breakpoint: 767,
+            settings: {
+               slidesToShow: 1,
+               adaptiveHeight: true,
+            }
+         }
+      ]
+   });
+</script>
+{% end_require_js %}

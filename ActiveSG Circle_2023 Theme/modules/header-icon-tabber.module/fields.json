@@ -1,0 +1,267 @@
+[ {
+  "id" : "fd7d73b5-de02-c507-295b-d1f954c7965a",
+  "name" : "icon_image",
+  "display_width" : null,
+  "label" : "Icon image",
+  "required" : false,
+  "locked" : false,
+  "responsive" : true,
+  "resizable" : true,
+  "show_loading" : false,
+  "type" : "image",
+  "default" : {
+    "size_type" : "auto",
+    "src" : "https://6212555.fs1.hubspotusercontent-na1.net/hubfs/6212555/gg_girl.svg",
+    "alt" : "gg_girl",
+    "loading" : "lazy",
+    "width" : 45,
+    "height" : 45,
+    "max_width" : 45,
+    "max_height" : 45
+  }
+}, {
+  "id" : "c46b2e96-81f4-41af-ab5e-32e8c4933b4c",
+  "name" : "add_tabber_item",
+  "display_width" : null,
+  "label" : "Add tabber item",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : "2d1e601a-d928-10ed-ba06-3c8bb0820b85",
+    "default" : 4
+  },
+  "children" : [ {
+    "id" : "b8960a73-aebe-eed9-8318-7bd9a86eff45",
+    "name" : "link",
+    "display_width" : null,
+    "label" : "Link",
+    "required" : false,
+    "locked" : false,
+    "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION", "PHONE_NUMBER", "WHATSAPP_NUMBER" ],
+    "show_advanced_rel_options" : false,
+    "type" : "link",
+    "default" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    }
+  }, {
+    "id" : "2d1e601a-d928-10ed-ba06-3c8bb0820b85",
+    "name" : "title",
+    "display_width" : null,
+    "label" : "Title",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "Parent"
+  }, {
+    "id" : "047f3ff2-5260-ee3a-5179-55bd6dc60f4b",
+    "name" : "icon",
+    "display_width" : null,
+    "label" : "Icon",
+    "required" : false,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : true,
+    "show_loading" : false,
+    "type" : "image",
+    "default" : {
+      "size_type" : "auto",
+      "src" : "https://6212555.fs1.hubspotusercontent-na1.net/hubfs/6212555/Vector-1.svg",
+      "alt" : "Vector-1",
+      "loading" : "lazy",
+      "width" : 51,
+      "height" : 61,
+      "max_width" : 51,
+      "max_height" : 61
+    }
+  }, {
+    "id" : "d29c9149-6f54-9b7b-7dcb-a877fb29a5ce",
+    "name" : "header",
+    "display_width" : null,
+    "label" : "Header",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "Preschool Initiatives"
+  }, {
+    "id" : "22f83568-3066-27b5-beb1-01c71196187e",
+    "name" : "content",
+    "display_width" : null,
+    "label" : "Content",
+    "required" : false,
+    "locked" : false,
+    "type" : "richtext",
+    "default" : "<p>Live better through sport with these easily accessible sport and physical activities</p>"
+  }, {
+    "id" : "514dd874-dd7d-00b4-9d45-ce63bbe0ab9d",
+    "name" : "image",
+    "display_width" : null,
+    "label" : "Image",
+    "required" : false,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : true,
+    "show_loading" : false,
+    "type" : "image",
+    "default" : {
+      "size_type" : "auto",
+      "src" : "https://6212555.fs1.hubspotusercontent-na1.net/hubfs/6212555/Rectangle%20479.png",
+      "alt" : "Rectangle 479",
+      "loading" : "lazy",
+      "width" : 466,
+      "height" : 343,
+      "max_width" : 466,
+      "max_height" : 343
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "default" : [ {
+    "title" : "Parent",
+    "icon" : {
+      "size_type" : "auto",
+      "src" : "https://6212555.fs1.hubspotusercontent-na1.net/hubfs/6212555/Vector-1.svg",
+      "alt" : "Vector-1",
+      "loading" : "lazy",
+      "width" : 51,
+      "height" : 61,
+      "max_width" : 51,
+      "max_height" : 61
+    },
+    "header" : "Preschool Initiatives",
+    "content" : "<p>Live better through sport with these easily accessible sport and physical activities</p>",
+    "image" : {
+      "size_type" : "auto",
+      "src" : "https://6212555.fs1.hubspotusercontent-na1.net/hubfs/6212555/Rectangle%20479.png",
+      "alt" : "Rectangle 479",
+      "loading" : "lazy",
+      "width" : 466,
+      "height" : 343,
+      "max_width" : 466,
+      "max_height" : 343
+    },
+    "link_field" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    }
+  }, {
+    "title" : "Parent",
+    "icon" : {
+      "size_type" : "auto",
+      "src" : "https://6212555.fs1.hubspotusercontent-na1.net/hubfs/6212555/Vector-1.svg",
+      "alt" : "Vector-1",
+      "loading" : "lazy",
+      "width" : 51,
+      "height" : 61,
+      "max_width" : 51,
+      "max_height" : 61
+    },
+    "header" : "Preschool Initiatives",
+    "content" : "<p>Live better through sport with these easily accessible sport and physical activities</p>",
+    "image" : {
+      "size_type" : "auto",
+      "src" : "https://6212555.fs1.hubspotusercontent-na1.net/hubfs/6212555/Rectangle%20479.png",
+      "alt" : "Rectangle 479",
+      "loading" : "lazy",
+      "width" : 466,
+      "height" : 343,
+      "max_width" : 466,
+      "max_height" : 343
+    },
+    "link_field" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    }
+  }, {
+    "title" : "Parent",
+    "icon" : {
+      "size_type" : "auto",
+      "src" : "https://6212555.fs1.hubspotusercontent-na1.net/hubfs/6212555/Vector-1.svg",
+      "alt" : "Vector-1",
+      "loading" : "lazy",
+      "width" : 51,
+      "height" : 61,
+      "max_width" : 51,
+      "max_height" : 61
+    },
+    "header" : "Preschool Initiatives",
+    "content" : "<p>Live better through sport with these easily accessible sport and physical activities</p>",
+    "image" : {
+      "size_type" : "auto",
+      "src" : "https://6212555.fs1.hubspotusercontent-na1.net/hubfs/6212555/Rectangle%20479.png",
+      "alt" : "Rectangle 479",
+      "loading" : "lazy",
+      "width" : 466,
+      "height" : 343,
+      "max_width" : 466,
+      "max_height" : 343
+    },
+    "link_field" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    }
+  }, {
+    "title" : "Parent",
+    "icon" : {
+      "size_type" : "auto",
+      "src" : "https://6212555.fs1.hubspotusercontent-na1.net/hubfs/6212555/Vector-1.svg",
+      "alt" : "Vector-1",
+      "loading" : "lazy",
+      "width" : 51,
+      "height" : 61,
+      "max_width" : 51,
+      "max_height" : 61
+    },
+    "header" : "Preschool Initiatives",
+    "content" : "<p>Live better through sport with these easily accessible sport and physical activities</p>",
+    "image" : {
+      "size_type" : "auto",
+      "src" : "https://6212555.fs1.hubspotusercontent-na1.net/hubfs/6212555/Rectangle%20479.png",
+      "alt" : "Rectangle 479",
+      "loading" : "lazy",
+      "width" : 466,
+      "height" : 343,
+      "max_width" : 466,
+      "max_height" : 343
+    },
+    "link_field" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    }
+  } ]
+} ]

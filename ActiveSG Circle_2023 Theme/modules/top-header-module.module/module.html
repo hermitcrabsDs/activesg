@@ -1,0 +1,158 @@
+{% if module.main_title and module.columns_group %}
+<div class="topHeader">
+   <div class="content-wrapper">
+      <button class="toggleClass" aria-expanded="false">
+         <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 105 105" fill="none">
+            <path d="M11.625 31.75C11.625 31.75 11.1667 32.9583 10.25 35.375C9.41666 37.7083 10.25 40.5833 12.75 44C12.75 44 13.2083 43.4167 14.125 42.25C15.0417 41.0833 17.4583 40.5 21.375 40.5H30.875C35.2917 40.5 38.7917 38.75 41.375 35.25C44.0417 31.6667 44.3333 27.6667 42.25 23.25C42.25 23.25 43.375 23.2083 45.625 23.125C47.875 22.9583 49.5417 21.9167 50.625 20C51.625 18 51.7083 16.5833 50.875 15.75C50.0417 14.9167 48.8333 14.5 47.25 14.5H31.5C31.5 15.9167 30.5833 16.6667 28.75 16.75C27 16.8333 26.125 16.0833 26.125 14.5H17.25C17.25 14.5 16.125 14.75 13.875 15.25C11.625 15.6667 10.4583 17.2917 10.375 20.125C10.375 20.125 10.6667 19.9583 11.25 19.625C11.9167 19.2917 12.625 19.0833 13.375 19V20.5C13.375 20.5 13.0417 20.5833 12.375 20.75C11.7083 20.9167 11.1667 21.125 10.75 21.375C10.3333 21.5417 9.91666 22 9.5 22.75C9.08333 23.5 9.20833 24.6667 9.875 26.25C10.4583 27.8333 10.875 28.9583 11.125 29.625C11.375 30.2917 11.5 30.625 11.5 30.625C11.5 30.625 11.9167 30.3333 12.75 29.75C13.6667 29.1667 14.875 28.875 16.375 28.875H20C23.25 28.875 24.6667 29.9167 24.25 32C23.8333 34.0833 22.0417 35.125 18.875 35.125C15.625 35.125 13.5833 34.5833 12.75 33.5C12 32.3333 11.625 31.75 11.625 31.75ZM45 25.25C45 25.25 45.4167 25.2083 46.25 25.125C47.1667 25.0417 48 24.6667 48.75 24C48.75 24 50.2083 26.7917 53.125 32.375C56.125 37.875 52.375 46.2083 41.875 57.375C36.625 62.875 33.4167 67.9167 32.25 72.5C31.0833 77 30.8333 80.8333 31.5 84C32.25 87.1667 33.375 89.625 34.875 91.375C36.375 93.125 37.125 94 37.125 94C37.125 94 36.5833 94.875 35.5 96.625C34.4167 98.4583 34.4167 101.167 35.5 104.75C35.5 104.75 33.75 103.583 30.25 101.25C26.75 98.9167 23.3333 95.625 20 91.375C17.5833 88.375 15.5417 85 13.875 81.25C12.2083 77.5 11.5417 73.625 11.875 69.625C12.2083 65.625 13.8333 61.5833 16.75 57.5C19.5833 53.4167 24.3333 49.5417 31 45.875C31 45.875 31.875 45.3333 33.625 44.25C35.4583 43.25 37.3333 41.8333 39.25 40C41.25 38.1667 42.9583 36 44.375 33.5C45.7083 30.9167 45.9167 28.1667 45 25.25ZM23.375 12.375C23.375 12.375 24.0833 11.5417 25.5 9.875C27 8.20833 29.4167 7.375 32.75 7.375C35.3333 7.375 37.0417 6.91667 37.875 6C38.7083 5.08333 39.125 4.625 39.125 4.625C39.125 4.625 39.9583 3.91667 41.625 2.5C43.375 1.08333 47.0833 0.375 52.75 0.375C58 0.375 62.4583 1.16667 66.125 2.75C69.875 4.25 73.1667 6.16667 76 8.5C76 8.5 75.125 8.08333 73.375 7.25C71.625 6.33333 69.2917 5.70833 66.375 5.375C63.5417 5.04167 60.2917 5.29167 56.625 6.125C52.9583 6.95833 49.25 9.04167 45.5 12.375H23.375ZM87.375 44.375C87.2917 40.4583 86.4167 36.5417 84.75 32.625C83.1667 28.7083 80.75 25.25 77.5 22.25C74.3333 19.1667 70.3333 16.75 65.5 15C60.6667 13.1667 55 12.375 48.5 12.625C54.9167 7.20833 61.9583 5.66667 69.625 8C77.375 10.4167 83.6667 14.7917 88.5 21.125C93.4167 27.375 95.8333 34.625 95.75 42.875C95.75 51.2083 91.1667 58.5417 82 64.875C82 64.875 82.9583 62.9583 84.875 59.125C86.875 55.2083 87.7083 50.2917 87.375 44.375ZM52.375 14.375C60.375 14.125 67.0417 16.0417 72.375 20.125C77.7083 24.125 81.4167 29.0417 83.5 34.875C85.6667 40.7083 86.0833 46.7917 84.75 53.125C83.5 59.4583 80.2917 64.7917 75.125 69.125L54.375 79.125C54.375 79.125 54.3333 77.25 54.25 73.5C54.1667 69.75 56.6667 65.2917 61.75 60.125C64.25 57.625 66.5417 54.625 68.625 51.125C70.7083 47.625 71.7917 43.9583 71.875 40.125C71.9583 36.2917 70.6667 32.5 68 28.75C65.4167 24.9167 60.625 21.4167 53.625 18.25C53.625 18.25 53.625 17.7917 53.625 16.875C53.7083 15.875 53.2917 15.0417 52.375 14.375ZM50.75 23C50.75 23 51 22.7083 51.5 22.125C52.0833 21.5417 52.5 20.9167 52.75 20.25C58.75 22.75 63.0833 25.625 65.75 28.875C68.4167 32.125 69.8333 35.5833 70 39.25C70.1667 42.8333 69.2083 46.5 67.125 50.25C65.0417 54 62.2083 57.6667 58.625 61.25C54.2917 65.75 52.2083 70 52.375 74C52.5417 77.9167 52.625 79.875 52.625 79.875C52.625 79.875 50.7083 81.25 46.875 84C43.0417 86.6667 40.2083 89.4167 38.375 92.25C38.375 92.25 37.6667 91.4583 36.25 89.875C34.8333 88.2917 33.8333 86 33.25 83C32.6667 80 33.0417 76.3333 34.375 72C35.625 67.6667 38.9167 62.7917 44.25 57.375C49.5 52.0417 52.7917 47.25 54.125 43C55.4583 38.75 55.875 35.1667 55.375 32.25C54.875 29.25 53.9583 26.9583 52.625 25.375C51.375 23.7917 50.75 23 50.75 23Z" fill="#DB4532"/>
+         </svg>
+         <span><a href="https://www.gov.sg/" target="_blank" rel="noopener">{{ module.main_title }}</a></span>
+         <span class="toggleClass_in">
+            <span class="underline">{{ module.underline_title }}</span>
+            <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="11" height="7" viewBox="0 0 11 7" fill="none">
+               <path d="M1.00046 0.999999L5.43578 5.5L9.87109 1" stroke="#30343B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+         </span>
+      </button>
+      {% if module.main_title and module.columns_group %}
+      <div class="topHeaderListGrp" aria-hidden="false">
+         <div class="topHeaderList">
+            {% for item in module.columns_group %}
+            <div class="topHeaderSingle">
+               <div class="topHeaderGrp">
+                  <div class="topHeaderLeft">
+                     {% if item.image_field.src %}
+                     {% set sizeAttrs = 'width="{{ item.image_field.width }}" height="{{ item.image_field.height }}"' %}
+                     {% if item.image_field.size_type == 'auto' %}
+                     {% set sizeAttrs = 'width="{{ item.image_field.width }}" height="{{ item.image_field.height }}" style="max-width: 100%; height: auto;"' %}
+                     {% elif item.image_field.size_type == 'auto_custom_max' %}
+                     {% set sizeAttrs = 'width="{{ item.image_field.max_width }}" height="{{ item.image_field.max_height }}" style="max-width: 100%; height: auto;"' %}
+                     {% endif %}
+                     {% set loadingAttr = item.image_field.loading != 'disabled' ? 'loading="{{ item.image_field.loading }}"' : '' %}
+                     <img src="{{ item.image_field.src }}" alt="{{ item.image_field.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+                     {% endif %}
+                  </div>
+                  <div class="topHeaderRight">
+                     <div class="topSinTitle">
+                        {{ item.title }}
+                     </div>
+                     <div class="topSinContent">
+                        {{ item.content }}
+                     </div>
+                  </div>
+               </div>
+            </div>
+            {% endfor %}
+         </div>
+      </div>
+      {% endif %}
+   </div>
+</div>
+
+<style>
+   .topHeader * {
+      {{ module.style.top_header_font.css }}
+      line-height: 1.333;
+      color: #454545;
+   }
+
+   .topHeader {
+      {{ module.style.top_header_spacing.css }}
+   }
+   .topHeader .content-wrapper {
+      max-width: 1258px;
+      padding: 0 20px;
+   }
+   .toggleClass {
+      display: flex;
+      align-items: center;
+      column-gap: 3px;
+      cursor: pointer;
+      max-width: max-content;
+      background: none;
+      border: 0;
+      padding: 0;
+      font-weight: 400;
+   }
+   .toggleClass:focus,
+   .toggleClass:active,
+   .toggleClass:hover {
+      background: none;
+      border: 0;
+   }
+   .toggleClass span {
+      margin-right: 11px;
+      font-family: 'Poppins';
+   }
+   span.toggleClass_in {
+      display: flex;
+      align-items: center;
+      margin-right: 0;
+   }
+   .topSinContent a {
+      color: #3A5FC8;
+   }
+   .toggleClass .underline {
+      text-decoration: underline;
+      color: #3A5FC8;
+      font-weight: 500;
+   }
+   .topSinTitle {
+      color: #1F1F1F;
+      font-weight: 600;
+      margin-bottom: 5px;
+   }
+   .topHeaderListGrp {
+      display: none;
+   }
+   .topHeaderLeft {
+      width: 31px;
+      height: 31px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      margin-right: 10px;
+      min-width: 31px;
+   }
+   .topHeaderList {
+      display: flex;
+      flex-wrap: wrap;
+      column-gap: 40px;
+      margin-top: 15px;
+   }
+   .topHeaderSingle {
+      width: calc(50% - 20px);
+   }
+   .toggleClass.active .arrow {
+      transform: rotate(180deg);
+   }
+   .topHeaderGrp {
+      display: flex;
+   }
+   @media(max-width: 767px){
+      .topHeaderList {
+         display: block;
+      }
+      .topHeaderSingle {
+         width: 100%;
+      }
+      .topHeaderSingle:not(:last-child){
+         margin-bottom: 20px;
+      }
+      .toggleClass > p {
+         margin-right: 5px;
+      }
+   }
+</style>
+
+{% require_js %}
+<script>
+   $(document).ready(function(){
+      $('.toggleClass_in').click(function(){
+         $(this).parent().toggleClass('active').attr('aria-expanded', 'true');
+         $('.topHeaderListGrp').toggle().focus().attr('aria-hidden', 'true');
+      });
+   });
+</script>
+{% end_require_js %}
+{% endif %}

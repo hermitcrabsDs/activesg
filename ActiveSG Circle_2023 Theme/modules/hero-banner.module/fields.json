@@ -1,0 +1,196 @@
+[ {
+  "id" : "9b289fac-7a04-fd16-e346-827a66c47b20",
+  "name" : "banner_image",
+  "display_width" : null,
+  "label" : "Banner image",
+  "required" : false,
+  "locked" : false,
+  "responsive" : true,
+  "resizable" : false,
+  "show_loading" : false,
+  "type" : "image",
+  "default" : {
+    "size_type" : "auto",
+    "src" : "https://6212555.fs1.hubspotusercontent-na1.net/hubfs/6212555/Rectangle%20475.png",
+    "alt" : "Rectangle 475",
+    "loading" : "lazy",
+    "width" : 1440,
+    "height" : 742,
+    "max_width" : 1440,
+    "max_height" : 742
+  }
+}, {
+  "id" : "cdb8e7dd-4b37-d3c9-aed8-f33cb0c3c693",
+  "name" : "style",
+  "display_width" : null,
+  "label" : "Style",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "39b4261e-71ae-4341-a500-1c4e69d93bfa",
+    "name" : "header_type",
+    "display_width" : null,
+    "label" : "Header type",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "1", "H1" ], [ "2", "H2" ], [ "3", "H3" ], [ "4", "H4" ], [ "5", "H5" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "default" : "1"
+  }, {
+    "id" : "2fec995d-a655-1a6c-2ed6-9740cb24448f",
+    "name" : "desktop_spacing",
+    "display_width" : null,
+    "label" : "Desktop spacing",
+    "required" : false,
+    "locked" : false,
+    "type" : "spacing",
+    "default" : {
+      "padding" : {
+        "top" : {
+          "value" : 50,
+          "units" : "px"
+        },
+        "bottom" : {
+          "value" : 50,
+          "units" : "px"
+        },
+        "left" : {
+          "value" : 20,
+          "units" : "px"
+        },
+        "right" : {
+          "value" : 20,
+          "units" : "px"
+        }
+      }
+    }
+  }, {
+    "id" : "8601d3f3-7622-6038-8fce-902e42503680",
+    "name" : "mobile_spacing",
+    "display_width" : null,
+    "label" : "Mobile spacing",
+    "required" : false,
+    "locked" : false,
+    "type" : "spacing",
+    "default" : {
+      "padding" : {
+        "top" : {
+          "value" : 25,
+          "units" : "px"
+        },
+        "bottom" : {
+          "value" : 25,
+          "units" : "px"
+        },
+        "left" : {
+          "value" : 20,
+          "units" : "px"
+        },
+        "right" : {
+          "value" : 20,
+          "units" : "px"
+        }
+      }
+    }
+  }, {
+    "id" : "743a26de-b4e7-99fb-140b-b1f5f7bbe540",
+    "name" : "title_color",
+    "display_width" : null,
+    "label" : "Title color",
+    "required" : false,
+    "locked" : false,
+    "type" : "color",
+    "default" : {
+      "color" : "#fff",
+      "opacity" : 100
+    }
+  } ],
+  "tab" : "STYLE",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "default" : {
+    "header_type" : "1",
+    "desktop_spacing" : {
+      "padding" : {
+        "top" : {
+          "value" : 50,
+          "units" : "px"
+        },
+        "bottom" : {
+          "value" : 50,
+          "units" : "px"
+        },
+        "left" : {
+          "value" : 20,
+          "units" : "px"
+        },
+        "right" : {
+          "value" : 20,
+          "units" : "px"
+        }
+      }
+    },
+    "mobile_spacing" : {
+      "padding" : {
+        "top" : {
+          "value" : 25,
+          "units" : "px"
+        },
+        "bottom" : {
+          "value" : 25,
+          "units" : "px"
+        },
+        "left" : {
+          "value" : 20,
+          "units" : "px"
+        },
+        "right" : {
+          "value" : 20,
+          "units" : "px"
+        }
+      }
+    },
+    "title_color" : {
+      "color" : "#fff",
+      "opacity" : 100
+    }
+  }
+}, {
+  "id" : "b3332035-228c-747e-ff0a-e760f5068a27",
+  "name" : "overlay_color",
+  "display_width" : null,
+  "label" : "Overlay color",
+  "required" : false,
+  "locked" : false,
+  "type" : "color",
+  "default" : {
+    "color" : "#000",
+    "opacity" : 60
+  }
+}, {
+  "id" : "8fb0e132-3ae4-0b12-f147-d5e9b7c8f495",
+  "name" : "banner_title",
+  "display_width" : null,
+  "label" : "Banner title",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "Welcome to<br> Active SG Circle"
+}, {
+  "id" : "b4aaab12-d08b-a944-4147-98a9e5442bb0",
+  "name" : "content",
+  "display_width" : null,
+  "label" : "Content",
+  "required" : false,
+  "locked" : false,
+  "type" : "richtext",
+  "default" : "<p>Live better through sport with these easily accessible sport<br>and physical activities</p>"
+} ]

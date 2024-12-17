@@ -1,0 +1,205 @@
+[ {
+  "id" : "2fed5ba2-fa38-1014-4c07-6c0652dd1bf6",
+  "name" : "main_title",
+  "display_width" : null,
+  "label" : "Main Title",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "A Singapore Government Agency Website"
+}, {
+  "id" : "d89ca4fe-69ef-29f3-dc27-16e5551af980",
+  "name" : "underline_title",
+  "display_width" : null,
+  "label" : "Underline Title",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "How to identify"
+}, {
+  "id" : "843b74b9-6600-5a83-5932-c0179362bd74",
+  "name" : "style",
+  "display_width" : null,
+  "label" : "Style",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "5ef47115-9a2e-098d-8780-fc478808b96f",
+    "name" : "top_header_spacing",
+    "display_width" : null,
+    "label" : "Top Header Spacing",
+    "required" : false,
+    "locked" : false,
+    "type" : "spacing",
+    "default" : {
+      "padding" : {
+        "top" : {
+          "value" : 16,
+          "units" : "px"
+        },
+        "bottom" : {
+          "value" : 16,
+          "units" : "px"
+        },
+        "left" : {
+          "value" : null,
+          "units" : null
+        },
+        "right" : {
+          "value" : null,
+          "units" : null
+        }
+      }
+    }
+  }, {
+    "id" : "ab8a3f8d-1c00-218a-d4bc-5a2d0e230ae2",
+    "name" : "icon_background_color",
+    "display_width" : null,
+    "label" : "Icon Background Color",
+    "required" : false,
+    "locked" : false,
+    "type" : "color",
+    "default" : {
+      "color" : "#BC363C",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "151a7c12-e32c-e605-1f4a-0b5dc50635a8",
+    "name" : "top_header_font",
+    "display_width" : null,
+    "label" : "Top Header Font",
+    "required" : false,
+    "locked" : false,
+    "load_external_fonts" : true,
+    "type" : "font",
+    "default" : {
+      "size" : 12
+    }
+  } ],
+  "tab" : "STYLE",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "default" : {
+    "top_header_spacing" : {
+      "padding" : {
+        "top" : {
+          "value" : 16,
+          "units" : "px"
+        },
+        "bottom" : {
+          "value" : 16,
+          "units" : "px"
+        },
+        "left" : {
+          "value" : null,
+          "units" : null
+        },
+        "right" : {
+          "value" : null,
+          "units" : null
+        }
+      }
+    },
+    "icon_background_color" : {
+      "color" : "#BC363C",
+      "opacity" : 100
+    },
+    "top_header_font" : {
+      "size" : 12
+    }
+  }
+}, {
+  "id" : "64d13939-f97f-48d8-a312-be7e973b19e4",
+  "name" : "columns_group",
+  "display_width" : null,
+  "label" : "Columns Group",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : "76431f36-58b6-ba8a-eca3-8cdb902b9eb1",
+    "default" : 2
+  },
+  "children" : [ {
+    "id" : "568198b8-99b1-8974-5e88-8cee4e3c21af",
+    "name" : "image_field",
+    "display_width" : null,
+    "label" : "Image",
+    "required" : false,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : true,
+    "show_loading" : false,
+    "type" : "image",
+    "default" : {
+      "size_type" : "auto",
+      "src" : "https://6212555.fs1.hubspotusercontent-na1.net/hubfs/6212555/SportsCare_December2022%20Theme/image/globe-1.svg",
+      "alt" : "globe",
+      "loading" : "lazy",
+      "width" : 16,
+      "height" : 16,
+      "max_width" : 16,
+      "max_height" : 16
+    }
+  }, {
+    "id" : "76431f36-58b6-ba8a-eca3-8cdb902b9eb1",
+    "name" : "title",
+    "display_width" : null,
+    "label" : "Title",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "Official website links end with .gov.sg"
+  }, {
+    "id" : "32e8d89c-4f00-be27-98fd-7df09b35b5f2",
+    "name" : "content",
+    "display_width" : null,
+    "label" : "Content",
+    "required" : false,
+    "locked" : false,
+    "type" : "richtext",
+    "default" : "Government agencies communicate via .gov.sg websites &nbsp; (e.g.go.gov.sg/open). <a href=\"https://www.gov.sg/trusted-sites#govsites\" rel=\"noopener\" target=\"_blank\">Trusted websites</a>"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "default" : [ {
+    "image_field" : {
+      "size_type" : "auto",
+      "src" : "https://6212555.fs1.hubspotusercontent-na1.net/hubfs/6212555/SportsCare_December2022%20Theme/image/globe-1.svg",
+      "alt" : "globe",
+      "loading" : "lazy",
+      "width" : 16,
+      "height" : 16,
+      "max_width" : 16,
+      "max_height" : 16
+    },
+    "title" : "Official website links end with .gov.sg",
+    "content" : "Government agencies communicate via .gov.sg websites &nbsp; (e.g.go.gov.sg/open). <a href=\"https://www.gov.sg/trusted-sites#govsites\" rel=\"noopener\" target=\"_blank\">Trusted websites</a>"
+  }, {
+    "image_field" : {
+      "size_type" : "auto",
+      "src" : "https://6212555.fs1.hubspotusercontent-na1.net/hubfs/6212555/SportsCare_December2022%20Theme/image/globe-1.svg",
+      "alt" : "globe",
+      "loading" : "lazy",
+      "width" : 16,
+      "height" : 16,
+      "max_width" : 16,
+      "max_height" : 16
+    },
+    "title" : "Official website links end with .gov.sg",
+    "content" : "Government agencies communicate via .gov.sg websites &nbsp; (e.g.go.gov.sg/open). <a href=\"https://www.gov.sg/trusted-sites#govsites\" rel=\"noopener\" target=\"_blank\">Trusted websites</a>"
+  } ]
+} ]

@@ -1,0 +1,177 @@
+[ {
+  "id" : "fd7d73b5-de02-c507-295b-d1f954c7965a",
+  "name" : "icon_image",
+  "display_width" : null,
+  "label" : "Icon image",
+  "required" : false,
+  "locked" : false,
+  "responsive" : true,
+  "resizable" : true,
+  "show_loading" : false,
+  "type" : "image",
+  "default" : {
+    "size_type" : "auto",
+    "src" : "https://6212555.fs1.hubspotusercontent-na1.net/hubfs/6212555/gg_girl.svg",
+    "alt" : "gg_girl",
+    "loading" : "lazy",
+    "width" : 45,
+    "height" : 45,
+    "max_width" : 45,
+    "max_height" : 45
+  }
+}, {
+  "id" : "c46b2e96-81f4-41af-ab5e-32e8c4933b4c",
+  "name" : "add_tabber_item",
+  "display_width" : null,
+  "label" : "Add tabber item",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : "2d1e601a-d928-10ed-ba06-3c8bb0820b85",
+    "default" : 4
+  },
+  "children" : [ {
+    "id" : "b8960a73-aebe-eed9-8318-7bd9a86eff45",
+    "name" : "link",
+    "display_width" : null,
+    "label" : "Link",
+    "required" : false,
+    "locked" : false,
+    "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION", "PHONE_NUMBER", "WHATSAPP_NUMBER" ],
+    "show_advanced_rel_options" : false,
+    "type" : "link",
+    "default" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    }
+  }, {
+    "id" : "047f3ff2-5260-ee3a-5179-55bd6dc60f4b",
+    "name" : "icon",
+    "display_width" : null,
+    "label" : "Icon",
+    "required" : false,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : true,
+    "show_loading" : false,
+    "type" : "image",
+    "default" : {
+      "size_type" : "auto",
+      "src" : "https://6212555.fs1.hubspotusercontent-na1.net/hubfs/6212555/Vector-1.svg",
+      "alt" : "Vector-1",
+      "loading" : "lazy",
+      "width" : 51,
+      "height" : 61,
+      "max_width" : 51,
+      "max_height" : 61
+    }
+  }, {
+    "id" : "2d1e601a-d928-10ed-ba06-3c8bb0820b85",
+    "name" : "title",
+    "display_width" : null,
+    "label" : "Title",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "Parent"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "default" : [ {
+    "link" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    },
+    "title" : "Parent",
+    "icon" : {
+      "size_type" : "auto",
+      "src" : "https://6212555.fs1.hubspotusercontent-na1.net/hubfs/6212555/Vector-1.svg",
+      "alt" : "Vector-1",
+      "loading" : "lazy",
+      "width" : 51,
+      "height" : 61,
+      "max_width" : 51,
+      "max_height" : 61
+    }
+  }, {
+    "link" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    },
+    "title" : "Parent",
+    "icon" : {
+      "size_type" : "auto",
+      "src" : "https://6212555.fs1.hubspotusercontent-na1.net/hubfs/6212555/Vector-1.svg",
+      "alt" : "Vector-1",
+      "loading" : "lazy",
+      "width" : 51,
+      "height" : 61,
+      "max_width" : 51,
+      "max_height" : 61
+    }
+  }, {
+    "link" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    },
+    "title" : "Parent",
+    "icon" : {
+      "size_type" : "auto",
+      "src" : "https://6212555.fs1.hubspotusercontent-na1.net/hubfs/6212555/Vector-1.svg",
+      "alt" : "Vector-1",
+      "loading" : "lazy",
+      "width" : 51,
+      "height" : 61,
+      "max_width" : 51,
+      "max_height" : 61
+    }
+  }, {
+    "link" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    },
+    "title" : "Parent",
+    "icon" : {
+      "size_type" : "auto",
+      "src" : "https://6212555.fs1.hubspotusercontent-na1.net/hubfs/6212555/Vector-1.svg",
+      "alt" : "Vector-1",
+      "loading" : "lazy",
+      "width" : 51,
+      "height" : 61,
+      "max_width" : 51,
+      "max_height" : 61
+    }
+  } ]
+} ]

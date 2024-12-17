@@ -1,0 +1,219 @@
+[ {
+  "id" : "4f597b14-ccbd-fbe1-9f3d-caf572510fa9",
+  "name" : "background_color",
+  "display_width" : null,
+  "label" : "Background color",
+  "required" : false,
+  "locked" : false,
+  "type" : "color",
+  "default" : {
+    "color" : "#E8E8E8",
+    "opacity" : 100
+  }
+}, {
+  "id" : "aca5a9e8-9b4e-a911-dd83-fb2dc805c019",
+  "name" : "add_slider_item",
+  "display_width" : null,
+  "label" : "Add slider item",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : "08c67c0d-2244-dc74-9881-ea128addeb5e",
+    "default" : 5
+  },
+  "children" : [ {
+    "id" : "3db3a4b4-d2c0-4a82-d26c-315ee8b7fc10",
+    "name" : "link",
+    "display_width" : null,
+    "label" : "Link",
+    "required" : false,
+    "locked" : false,
+    "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION", "PHONE_NUMBER", "WHATSAPP_NUMBER" ],
+    "show_advanced_rel_options" : false,
+    "type" : "link",
+    "default" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    }
+  }, {
+    "id" : "d3415e75-37ef-5074-6136-8ce7a01da604",
+    "name" : "image",
+    "display_width" : null,
+    "label" : "Image",
+    "required" : false,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : true,
+    "show_loading" : false,
+    "type" : "image",
+    "default" : {
+      "size_type" : "auto",
+      "src" : "https://6212555.fs1.hubspotusercontent-na1.net/hubfs/6212555/Rectangle%2044.png",
+      "alt" : "Rectangle 44",
+      "loading" : "lazy",
+      "width" : 387,
+      "height" : 245,
+      "max_width" : 387,
+      "max_height" : 245
+    }
+  }, {
+    "id" : "08c67c0d-2244-dc74-9881-ea128addeb5e",
+    "name" : "title",
+    "display_width" : null,
+    "label" : "Title",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "Active Health"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "default" : [ {
+    "link" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    },
+    "image" : {
+      "size_type" : "auto",
+      "src" : "https://6212555.fs1.hubspotusercontent-na1.net/hubfs/6212555/Rectangle%2044.png",
+      "alt" : "Rectangle 44",
+      "loading" : "lazy",
+      "width" : 387,
+      "height" : 245,
+      "max_width" : 387,
+      "max_height" : 245
+    },
+    "title" : "Active Health"
+  }, {
+    "link" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    },
+    "image" : {
+      "size_type" : "auto",
+      "src" : "https://6212555.fs1.hubspotusercontent-na1.net/hubfs/6212555/Rectangle%2044.png",
+      "alt" : "Rectangle 44",
+      "loading" : "lazy",
+      "width" : 387,
+      "height" : 245,
+      "max_width" : 387,
+      "max_height" : 245
+    },
+    "title" : "Active Health"
+  }, {
+    "link" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    },
+    "image" : {
+      "size_type" : "auto",
+      "src" : "https://6212555.fs1.hubspotusercontent-na1.net/hubfs/6212555/Rectangle%2044.png",
+      "alt" : "Rectangle 44",
+      "loading" : "lazy",
+      "width" : 387,
+      "height" : 245,
+      "max_width" : 387,
+      "max_height" : 245
+    },
+    "title" : "Active Health"
+  }, {
+    "link" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    },
+    "image" : {
+      "size_type" : "auto",
+      "src" : "https://6212555.fs1.hubspotusercontent-na1.net/hubfs/6212555/Rectangle%2044.png",
+      "alt" : "Rectangle 44",
+      "loading" : "lazy",
+      "width" : 387,
+      "height" : 245,
+      "max_width" : 387,
+      "max_height" : 245
+    },
+    "title" : "Active Health"
+  }, {
+    "link" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    },
+    "image" : {
+      "size_type" : "auto",
+      "src" : "https://6212555.fs1.hubspotusercontent-na1.net/hubfs/6212555/Rectangle%2044.png",
+      "alt" : "Rectangle 44",
+      "loading" : "lazy",
+      "width" : 387,
+      "height" : 245,
+      "max_width" : 387,
+      "max_height" : 245
+    },
+    "title" : "Active Health"
+  } ]
+}, {
+  "id" : "dda686ac-70cb-0af1-821e-f5f9dc28bb02",
+  "name" : "module_setting",
+  "display_width" : null,
+  "label" : "Module Setting",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "35be7a4e-ae23-e43e-5fae-621304736ecf",
+    "name" : "overlay_color",
+    "display_width" : null,
+    "label" : "Overlay Color",
+    "required" : false,
+    "locked" : false,
+    "type" : "color",
+    "default" : {
+      "color" : "#000",
+      "opacity" : 40
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "default" : {
+    "overlay_color" : {
+      "color" : "#000",
+      "opacity" : 40
+    }
+  }
+} ]

@@ -1,0 +1,118 @@
+.recent-post {
+   display: flex;
+   align-items: center;
+   flex-wrap: wrap;
+   margin-right: 17px;
+   padding-bottom: 24px;
+}
+
+.recent-img {
+   margin-right: 19px;
+   width: 25%;
+}
+
+.recent-img img {
+   border-radius: 12px;
+   width: 100px;
+   height: 100px;   
+   object-fit: cover;
+}
+
+.recent-post-title {
+   font-weight: 600;
+   font-size: 18px;
+   line-height: 1.44444444444;
+   margin-bottom: 12px;
+   display: inline-block;
+}
+
+.recent-content>a {
+   text-decoration: none;
+}
+
+.recent-post-wrapper {
+   background: #FFFFFF;
+   box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.1);
+   border-radius: 16px;
+   padding: 24px 0px 0 24px;
+}
+
+.recent-post-date {
+   font-weight: 500;
+   font-size: 14px;
+   line-height: 1.5;   
+   color: #181B1D;
+   display: flex;
+   align-items: center;
+   flex-wrap: wrap;
+   row-gap: 12px;
+}
+.recent-post-date svg {
+   width: 16px;
+   height: 16px;
+   margin-right: 6px;
+}
+.recent-post-date {
+   display: flex;
+   align-items: center;
+}
+.recent-content {
+   width: calc(75% - 19px);
+   padding-right: 7px;
+}
+
+.slick-current .recent-post, .slick-current + .slick-active .recent-post {
+   margin-right: 16px;
+   border-right: 1px solid rgb(196 196 196 / 50%);
+}
+.recent-post-top {
+   position: relative;
+   padding-right: 20px;
+}
+.recent-post-top h5 {
+    margin-right: 70px;
+}
+.btn-wrap {
+   position: absolute;
+   top: 50%;
+   right: 20px;
+   transform: translateY(-50%);
+   display: flex;
+   align-items: center;
+}
+
+.next-btn {
+   margin-left: 16px;
+   transform: rotate(180deg);
+}
+
+.next-btn svg, .prev-btn svg {
+   width: 25px;
+   height: 25px;
+}
+
+.next-btn, .prev-btn {
+   line-height: 0;
+   cursor: pointer;
+}
+
+.next-btn svg path, .prev-btn svg path {
+   stroke: #ABABAB;
+   transition: all 0.15s ease-in-out;
+}
+
+.next-btn:hover svg path, .prev-btn:hover svg path {
+   stroke: #EC0319;
+}
+
+@media (max-width: 991px) {
+   .slick-current+.slick-active .recent-post {
+      border-right: 0;  
+   }
+}
+
+@media (max-width: 576px) {
+   .slick-current .recent-post {
+      border-right: 0;
+   }
+}

@@ -1,0 +1,108 @@
+<div class="wwa_mdl" style="background-color: rgba({{ module.style.background_color.color|convert_rgb  }},{{ module.style.background_color.opacity/100 }});">
+   <div class="content-wrapper">
+      <div class="wwa_wrap" style="background-image: url({{ module.background_image.src }});">
+         <div class="content_wrap" style="background-color: rgba({{ module.style.content_background_color.color|convert_rgb  }},{{ module.style.content_background_color.opacity/100 }});">
+            <div class="title"><h3>{{ module.title }}</h3></div>
+            <div class="content">{{ module.content }}</div>
+            <div class="button-wrapper">
+               {% if module.button.select_button_type == "standard" %}
+               {% set href = module.button.link_field.url.href %}
+               {% if module.button.link_field.url.type is equalto "EMAIL_ADDRESS" %}
+               {% set href = "mailto:" + href %}
+               {% endif %}
+               <a href="{{ href }}" class="mdl_btn {{ module.button.select_button_style }}"
+                  {% if module.button.link_field.open_in_new_tab %}target="_blank"{% endif %}
+                  {% if module.button.link_field.rel %}rel="{{ module.button.link_field.rel }}"{% endif %}
+                  >{{ module.button.button_text }}
+               </a>
+               {% endif %}
+               {% if module.button.select_button_type == "cta" %}
+               {% cta guid="{{ module.button.cta_field }}" %}
+               {% endif %}
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+
+{% require_css %}
+<style>
+   {% scope_css %}
+   .wwa_mdl {
+      {{ module.style.spacing.css }}
+   }
+   .wwa_mdl .wwa_wrap {
+      border-radius: 16px;
+      overflow: hidden;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+   }
+   .wwa_mdl .content_wrap {
+      margin: 45px;
+      max-width: 500px;
+      border-radius: 16px;
+      padding: 87px 40px 45px;
+      color: #fff;
+   }
+   .wwa_mdl .content_wrap .title h3 {
+      color: inherit;
+      margin-bottom: 20px;
+   }
+   .wwa_mdl .content_wrap .content {
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 29.5px;
+   }
+   .wwa_mdl .button-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      margin: 50px 30px 0;
+   }
+   .wwa_mdl .button-wrapper .mdl_btn {
+      background: #EC0319;
+      border: 2px solid #EC0319;
+      border-radius: 67px;
+      padding: 14px 40px;
+      text-decoration: none;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 1.25;
+      text-align: center;
+      text-transform: capitalize;
+      color: #fff;
+      position: relative;
+   }
+   .wwa_mdl .button-wrapper .mdl_btn.white:before {
+      content: url({{ get_asset_url('../../images/Arrow_dark.png') }});
+      position: absolute;
+      right: 15px;
+      top: 8px;
+   }
+   .wwa_mdl .button-wrapper .mdl_btn.white {
+      background: #FFFFFF;
+      color: #202833;
+      border-color: #fff;
+   }
+   @media (max-width:767px) {
+      .wwa_mdl {
+         {{ module.style.mobile_spacing.css }}
+      }          
+      .wwa_mdl .content_wrap {
+         padding: 40px 20px;
+         margin: 45px 20px;
+      }
+      .wwa_mdl .button-wrapper {
+         margin: 0;  
+      } 
+      .wwa_mdl .button-wrapper .mdl_btn {
+         padding: 12px 16px;
+      }
+      .wwa_mdl .button-wrapper {
+       margin-top: 20px;  
+      }
+   }
+   {% end_scope_css %}
+</style>
+{% end_require_css %}

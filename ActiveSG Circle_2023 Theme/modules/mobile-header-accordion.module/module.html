@@ -1,0 +1,97 @@
+<div class="cst-header-tabber-grp mob visible-phone">
+   <div class="cst-icn-btn-grp">
+      <div class="cst-icon-col-grp">         
+         <span class="tab-text"></span>
+         <i class="fa fa-angle-down"></i>
+      </div>
+
+      <a href="javascript:;" class="cst-icon" >
+         {% if module.icon_image.src %}
+         {% set sizeAttrs = 'width="{{ module.icon_image.width }}" height="{{ module.icon_image.height }}"' %}
+         {% if module.icon_image.size_type == 'auto' %}
+         {% set sizeAttrs = 'width="{{ module.icon_image.width }}" height="{{ module.icon_image.height }}" style="max-width: 100%; height: auto;"' %}
+         {% elif module.icon_image.size_type == 'auto_custom_max' %}
+         {% set sizeAttrs = 'width="{{ module.icon_image.max_width }}" height="{{ module.icon_image.max_height }}" style="max-width: 100%; height: auto;"' %}
+         {% endif %}
+         {% set loadingAttr = module.icon_image.loading != 'disabled' ? 'loading="{{ module.icon_image.loading }}"' : '' %}
+         <img src="{{ module.icon_image.src }}" alt="{{ module.icon_image.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+         {% endif %}</a>
+
+   </div>
+   <div class="cst-tabber-bdy-grp">
+      <div class="page-center">
+
+         <div class="cst-acc-grp">
+            {% for item in module.add_tabber_item %}    
+            {% set href = item.link.url.href %}
+            {% if item.link.url.type is equalto "EMAIL_ADDRESS" %}
+            {% set href = "mailto:" + href %}
+            {% endif %}
+
+            <div class="cst-acc-item">
+               <div  class="in" data-href="{{ href }}">
+                  <a href="{{ href }}"
+                     {% if item.link.open_in_new_tab %}target="_blank"{% endif %}
+                     {% if item.link.rel %}rel="{{ item.link.rel }}"{% endif %}
+                     >
+                     <div class="title">
+                        {{ item.title }}
+                     </div>
+                     <div class="cst-tab-icon">
+                        {% if item.icon.src %}
+                        {% set sizeAttrs = 'width="{{ item.icon.width }}" height="{{ item.icon.height }}"' %}
+                        {% if item.icon.size_type == 'auto' %}
+                        {% set sizeAttrs = 'width="{{ item.icon.width }}" height="{{ item.icon.height }}" style="max-width: 100%; height: auto;"' %}
+                        {% elif item.icon.size_type == 'auto_custom_max' %}
+                        {% set sizeAttrs = 'width="{{ item.icon.max_width }}" height="{{ item.icon.max_height }}" style="max-width: 100%; height: auto;"' %}
+                        {% endif %}
+                        {% set loadingAttr = item.icon.loading != 'disabled' ? 'loading="{{ item.icon.loading }}"' : '' %}
+                        <img src="{{ item.icon.src }}" alt="{{ item.icon.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+                        {% endif %}
+                     </div>
+                  </a>
+               </div>
+               <div class="cst-acc-con" >
+                  <div class="cst-con">
+                     <div class="cst-top">
+                        <h2>
+                           {{ item.header }}
+                        </h2>
+                        <div class="con-tent-grp">
+                           {{ item.content }}
+                        </div>
+                     </div>
+                     <div class="cst-img-grp">
+                        <div class="image-img" style="background-image:url({{ item.image.src }});">
+                        </div> 
+                     </div>
+                  </div>
+               </div>
+            </div>
+            {% endfor %}
+         </div>
+
+      </div>
+
+   </div>
+</div>
+
+{% require_js %}
+<script>
+   $('.cst-header-tabber-grp.mob .cst-icn-btn-grp').click(function(){
+      $(this).next().fadeToggle(500);
+      $(this).toggleClass('active-icon');
+      $('body').toggleClass('active-icon');
+   });
+   $('.cst-acc-grp .cst-acc-item .in').click(function(){
+      $(this).parent().siblings().children('.cst-acc-con').slideUp();
+      $(this).next().slideToggle(300);    
+      var clk12 = $(this).attr('data-href');
+      setTimeout(function() {
+         location.assign(clk12);
+      }, 1500);
+      return false;
+   });
+</script>
+{% end_require_js %}
+

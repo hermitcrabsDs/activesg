@@ -1,0 +1,138 @@
+{{ require_js(get_asset_url('../../js/slick.min.js')) }}
+{{ require_css(get_asset_url('../../css/slick.css')) }}
+
+<div class="content-wrapper">  
+   <div class="recent-post-wrapper">          
+      <div class="recent-post-top">
+         {% if module.title %}
+         <h5 class="widget-title">{{ module.title }}</h5> 
+         {% endif %}
+         <div class="btn-wrap">
+            <div class="prev-btn"><svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+               <path d="M15 27.5C21.9036 27.5 27.5 21.9036 27.5 15C27.5 8.09644 21.9036 2.5 15 2.5C8.09644 2.5 2.5 8.09644 2.5 15C2.5 21.9036 8.09644 27.5 15 27.5Z" stroke="#ABABAB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+               <path d="M15 10L10 15L15 20" stroke="#ABABAB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+               <path d="M20 15H10" stroke="#ABABAB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+               </svg>
+            </div>
+            <div class="next-btn"><svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+               <path d="M15 27.5C21.9036 27.5 27.5 21.9036 27.5 15C27.5 8.09644 21.9036 2.5 15 2.5C8.09644 2.5 2.5 8.09644 2.5 15C2.5 21.9036 8.09644 27.5 15 27.5Z" stroke="#ABABAB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+               <path d="M15 10L10 15L15 20" stroke="#ABABAB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+               <path d="M20 15H10" stroke="#ABABAB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+               </svg>
+            </div>
+         </div>
+      </div>
+      {% if module.choose_post_type == 'blog' %}
+      {% set rec_posts = blog_recent_posts( module.blog, module.number_of_post) %}
+      <div class="recent-post-wrap">
+         {% for rec_post in rec_posts %}
+         <div>
+            <div class="recent-post">
+               <div class="recent-img">
+                  <a href="{{ rec_post.absolute_url }}">
+                     {% if rec_post.featured_image %}
+                     <img src="{{ rec_post.featured_image }}" alt="{{ rec_post.name | striptags }}" />
+                     {% endif %}    
+                  </a>
+               </div>
+               <div class="recent-content">
+                  <a href="{{ rec_post.absolute_url }}">     
+                     <span class="recent-post-title">{{ rec_post.name }}</span>
+                  </a>                     
+               </div>
+            </div>
+         </div>
+         {% endfor %}
+      </div>
+      {% elif module.choose_post_type == 'custom' %}
+      <div class="recent-post-wrap">
+         {% for rec_post in module.custom_post %}
+         <div>
+            <div class="recent-post">
+               <div class="recent-img">
+                  {% set href = rec_post.link.url.href %}
+                  {% if rec_post.link.url.type is equalto "EMAIL_ADDRESS" %}
+                  {% set href = "mailto:" + href %}
+                  {% endif %}
+                  {% if rec_post.image.src %}
+                  {% if href %}
+                  <a href="{{ href }}">
+                     {% endif %}
+                     {% set sizeAttrs = 'width="{{ rec_post.image.width }}" height="{{ rec_post.image.height }}"' %}
+                     {% if rec_post.image.size_type == 'auto' %}
+                     {% set sizeAttrs = 'width="{{ rec_post.image.width }}" height="{{ rec_post.image.height }}" style="max-width: 100%; height: auto;"' %}
+                     {% elif rec_post.image.size_type == 'auto_custom_max' %}
+                     {% set sizeAttrs = 'width="{{ rec_post.image.max_width }}" height="{{ rec_post.image.max_height }}" style="max-width: 100%; height: auto;"' %}
+                     {% endif %}
+                     {% set loadingAttr = rec_post.image.loading != 'disabled' ? 'loading="{{ rec_post.image.loading }}"' : '' %}
+                     <img src="{{ rec_post.image.src }}" alt="{{ rec_post.title }}" {{ loadingAttr }} {{ sizeAttrs }}>	
+                  {% if href %}</a>{% endif %}
+                  {% endif %}   
+               </div>
+               <div class="recent-content">
+                  {% if href %}<a href="{{ href }}"> {% endif %}    
+                     <span class="recent-post-title">{{ rec_post.title }}</span>
+                  {% if href %}</a>{% endif %}                   
+               </div>
+            </div>
+         </div>
+         {% endfor %}
+      </div>
+      {% endif %}
+   </div>
+</div>
+
+{% require_css %}
+
+<style>
+   {% scope_css %}
+   .recent-post-wrapper {
+      z-index: 1;
+      position: relative;
+      {{ module.style.spacing.css }}
+   }   
+   {% end_scope_css %}
+</style>
+
+{% end_require_css %}
+
+{% require_js %}
+<script>
+   $(document).ready(function () {
+      $('.recent-post-wrap').slick({
+         infinite:true,
+         slidesToShow: 3,
+         dots: false,
+         slidesToScroll: 1,
+         prevArrow: $('.prev-btn'),
+         nextArrow: $('.next-btn'),
+         autoplay: false,
+         autoplaySpeed: 2000,
+         responsive: [
+            {
+               breakpoint: 991,
+               settings: {
+                  slidesToShow: 2,
+                  slidesToScroll: 1
+               }
+            },
+            {
+               breakpoint: 576,
+               settings: {
+                  slidesToShow: 1,
+                  slidesToScroll: 1
+               }
+            },
+            {
+               breakpoint: 480,
+               settings: {
+                  slidesToShow: 1,
+                  slidesToScroll: 1
+               }
+            }
+         ]
+      });
+   });
+
+</script>
+{% end_require_js %}

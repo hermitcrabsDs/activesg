@@ -1,0 +1,112 @@
+{% set items = "title,path,category,video_thumbnail,trailer_video,hs_createdate,description,filter_group" %}
+{% set list = "Live Events,Competitions,Fitness and Wellness,Sports,Lifestyle,News,Lessons,team-singapore" %}
+{% set query1 = "orderBy=-hs_createdate&filter_group__in="~ module.category ~ "&limit=1&offset=0" %}
+
+{% set objects1 = crm_objects("videos", query1, items) %}
+{% set max_posts = 1 %}
+{% set results = objects1.results | sort(false, false, 'hs_createdate') %}
+
+
+
+<!--================================ Competitions ===========================================  -->
+
+
+{% set href = module.page_link.url.href %}
+{% if module.page_link.url.type is equalto "EMAIL_ADDRESS" %}
+	{% set href = "mailto:" + href %}
+{% endif %}
+<div class="cst-watch-grp video-list-slider">
+   <div class="cst-ttl-grp">
+      <h3>{{ module.header }}</h3>
+      <div class="cst-vw-btn">
+         <a href="{{ href }}" class="view-link"
+            {% if module.page_link.open_in_new_tab %}target="_blank"{% endif %}
+            {% if module.page_link.rel %}rel="{{ module.page_link.rel }}"{% endif %}
+            >
+            {{ module.button_text }}
+         </a>
+      </div>
+   </div>
+   {% for item in results %}
+   {% set episodes = crm_associations(item.id, "USER_DEFINED", 152, "orderBy=episode_number&limit=2", "episode_title,title,description") %} 
+   <div class="cst-video-item" data-id="{{ item.id}}">
+      <div class="iiner" style="background-image:url('{{ item.video_thumbnail }}');">
+         <button class="cst-btn more" href="#popup_{{item.id}}" data-uuid="{{ item.trailer_video }}">
+            <svg width="103" height="103" viewBox="0 0 103 103" fill="none" xmlns="http://www.w3.org/2000/svg">
+               <g filter="url(#filter0_d_115_2753)">
+                  <circle cx="51.3133" cy="45.3133" r="33.3133" fill="#EE2200"/>
+               </g>
+               <path d="M63.1157 46.9373L46.459 57.3477C46.122 57.5581 45.7388 57.6639 45.3555 57.6639C45.0083 57.6639 44.6606 57.5775 44.346 57.4026C43.6841 57.0357 43.2734 56.3392 43.2734 55.5818V34.761C43.2734 34.0037 43.6841 33.3072 44.346 32.9402C45.0078 32.5712 45.8171 32.5936 46.459 32.9951L63.1157 43.4056C63.7242 43.7868 64.0943 44.4538 64.0943 45.1714C64.0943 45.8891 63.7242 46.5561 63.1157 46.9373Z" fill="white"/>
+               <defs>
+                  <filter id="filter0_d_115_2753" x="0" y="0" width="102.627" height="102.627" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                     <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                     <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                     <feOffset dy="6"/>
+                     <feGaussianBlur stdDeviation="9"/>
+                     <feComposite in2="hardAlpha" operator="out"/>
+                     <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.5 0"/>
+                     <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_115_2753"/>
+                     <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_115_2753" result="shape"/>
+                  </filter>
+               </defs>
+            </svg>
+         </button>
+         <div class="cst-title">
+            <h5>{{ item.title }}</h5>
+         </div>
+      </div>
+   </div>
+   {% endfor %}
+</div>
+
+
+
+
+<div id="popup_container" class="popup_container">
+   {% for item2 in results %}
+   <!--================================ Competitions ===========================================  -->
+   <div class="popup_outer" id="popup_{{ item2.id }}">
+      <div class="popup_inner">
+         <button class="close_popup" data-uuid="{{ item2.trailer_video }}">
+            <svg xmlns="http://www.w3.org/2000/svg" width="39" height="39" viewBox="0 0 39 39" fill="none">
+               <rect x="0.69043" y="0.736328" width="37.5" height="37.5" rx="18.75" fill="white" stroke="#EE2200"/>
+               <path d="M23.9633 25.3707L18.586 19.9554C18.4618 19.8302 18.3936 19.6634 18.3936 19.4816C18.3936 19.3035 18.4618 19.1365 18.586 19.0116L23.9582 13.6013C24.0825 13.4761 24.2483 13.4072 24.4252 13.4072C24.602 13.4072 24.7679 13.476 24.8921 13.6013L25.2878 13.9997C25.412 14.1248 25.4807 14.2919 25.4807 14.47C25.4807 14.6481 25.412 14.8151 25.2878 14.9403L20.7765 19.4835L25.293 24.0317C25.4172 24.1568 25.4857 24.3238 25.4857 24.502C25.4857 24.6801 25.4172 24.847 25.293 24.9722L24.8972 25.3707C24.6397 25.6299 24.2207 25.6299 23.9633 25.3707Z" fill="#EE2200"/>
+               <path d="M14.9156 25.3707L20.2929 19.9554C20.4171 19.8302 20.4854 19.6634 20.4854 19.4816C20.4854 19.3035 20.4171 19.1365 20.2929 19.0116L14.9208 13.6013C14.7964 13.4761 14.6306 13.4072 14.4538 13.4072C14.2769 13.4072 14.111 13.476 13.9868 13.6013L13.5911 13.9997C13.4669 14.1248 13.3983 14.2919 13.3983 14.47C13.3983 14.6481 13.4669 14.8151 13.5911 14.9403L18.1024 19.4835L13.5859 24.0317C13.4618 24.1568 13.3932 24.3238 13.3932 24.502C13.3932 24.6801 13.4618 24.847 13.5859 24.9722L13.9818 25.3707C14.2392 25.6299 14.6582 25.6299 14.9156 25.3707Z" fill="#EE2200"/>
+            </svg>
+         </button>
+         <div class="wrapper">
+            <div data-id="{{ item2.id }}" id="pItem{{ item2.id }}" class="popup_Item row_1">
+               {% if item2.trailer_video %}
+               <div class="vidyard-player-embed pid_{{ item2.id }}" data-uuid="{{ item2.trailer_video }}" data-v="4" data-type="inline" data-height="500" ></div> 
+               {% else %}
+               <img src="{{ item2.video_thumbnail }}">
+               {% endif %}
+               {% set episodes = crm_associations(item2.id, "USER_DEFINED", 152, "orderBy=episode_number&limit=1", "episode_title,title,description,path") %} 
+               <div class="more-details row-flex justify-bw align-center">
+                  <div class="left-col">
+                     <h2 class="title">{{ item2.title }}</h2>
+                     <div class="desc">
+                        {{ item2.description }}
+                     </div> 
+                  </div>
+                  <div class="right-col">
+                     <a href="{{href}}/{{  episodes.results[0].path }}">
+                        <div>
+                           <svg xmlns="http://www.w3.org/2000/svg" fill="#000000" viewBox="0 0 128 128" width="128px" height="128px">
+                              <path d="M 64 6.0507812 C 49.15 6.0507812 34.3 11.7 23 23 C 0.4 45.6 0.4 82.4 23 105 C 34.3 116.3 49.2 122 64 122 C 78.8 122 93.7 116.3 105 105 C 127.6 82.4 127.6 45.6 105 23 C 93.7 11.7 78.85 6.0507812 64 6.0507812 z M 64 12 C 77.3 12 90.600781 17.099219 100.80078 27.199219 C 121.00078 47.499219 121.00078 80.500781 100.80078 100.80078 C 80.500781 121.10078 47.500781 121.10078 27.300781 100.80078 C 7.0007813 80.500781 6.9992188 47.499219 27.199219 27.199219 C 37.399219 17.099219 50.7 12 64 12 z M 64 42 C 62.3 42 61 43.3 61 45 L 61 61 L 45 61 C 43.3 61 42 62.3 42 64 C 42 65.7 43.3 67 45 67 L 61 67 L 61 83 C 61 84.7 62.3 86 64 86 C 65.7 86 67 84.7 67 83 L 67 67 L 83 67 C 84.7 67 86 65.7 86 64 C 86 62.3 84.7 61 83 61 L 67 61 L 67 45 C 67 43.3 65.7 42 64 42 z"></path>
+                           </svg>
+                           <span>More Episodes</span>
+                        </div>
+                     </a>
+                  </div>
+               </div>
+
+            </div>
+         </div>
+      </div>
+   </div>
+   {% endfor %}
+</div>
+
+
+

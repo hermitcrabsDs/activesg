@@ -1,0 +1,100 @@
+{% set todayDate = local_dt|unixtimestamp|minus_time(1, "days") %}
+
+{% set query = 'order=-start_date&limit=3&limit=3&filter_group__in=' ~ module.select_group %}
+{% set event = crm_objects('events', query , 'start_date, end_date, event_title,event_path, start_time, end_time, thumbnail_image,filter_type,venue', "formatting=true") %}
+
+<div class="cst-watch-grp cst-event">
+   <div class="cst-ttl-grp">
+      <h3>{{ module.header }}</h3>
+      <div class="cst-vw-btn">
+         {% set href = module.link.url.href %}
+         {% if module.link.url.type is equalto "EMAIL_ADDRESS" %}
+         {% set href = "mailto:" + href %}
+         {% endif %}
+         <a class="view-link" href="{{ href }}"
+            {% if module.link.open_in_new_tab %}target="_blank"{% endif %}
+            {% if module.link.rel %}rel="{{ module.link.rel }}"{% endif %}
+            >{{ module.button_text }}</a>
+      </div>
+   </div>
+
+   <div class="cst-evnt-item-grp">
+      {% if event.total == 0 %}
+      <p class='align-center'>Sorry, no one found for that Search. Try changing your filter and search again.</p>
+      {% else %}      
+      {% for row in event.results %}
+      <div class="schedule-data_new">
+         <div class="schedule-image_date_new">
+            {% if row.thumbnail_image %}
+            <div class="schedule-image_new">
+               <div class="schedule_inner_img_new">
+                  {% if row.thumbnail_image %}
+                  <img src="{{ row.thumbnail_image }}" alt="{{ row.event_title }}" >
+                  {% else %}
+                  {% endif %}
+               </div>
+            </div>
+            {% endif %}
+
+            <div class="schedule-date_new">
+               <div class="date-inner_new desk-hide">
+                  <div class="date-inner_new_box">
+                     <p class="date_sec">
+                        <strong>{{ row.start_date|datetimeformat('%e') }}</strong><br />
+                        <span>{{ row.start_date|datetimeformat('%b') }}</span>
+                     </p>
+                     <div class="end_date">Start</div>
+                  </div>
+                  <div class="border"></div>
+                  <div class="date-inner_new_box">
+                     <p class="date_sec date_sec_new">
+                        <strong>{{ row.end_date|datetimeformat('%e') }}</strong><br />
+                        <span>{{ row.end_date|datetimeformat('%b') }}</span>
+                     </p>
+                     <div class="start_date">end</div>
+                  </div>
+               </div>
+               <div class="cst-timing">
+                  {{ row.start_time }} {{ row.end_time }}
+               </div>
+            </div>
+         </div>
+         <div class="mobile-wrap_new">
+            <div class="category-name__main_new">
+               <div class="category-name_new">
+                  {% if row.filter_type %}
+                  <ul>
+                     <li>{{ row.filter_type }}</li>
+                  </ul>
+                  {% endif %}
+                  <div class="mobile-zone_new"><p></p></div>
+               </div>
+               <div class="sport-name_new">
+                  <div class="sport-inner_new">
+                     <p class="mobile-sport-name">{{ row.event_title }}</p>
+                     <p class="desk-hide_new desk-zone"></p>
+                     <h5>
+                        <span class="venue"><img src="https://6212555.fs1.hubspotusercontent-na1.net/hubfs/6212555/GetActiveSG_2022/image/map-pin.svg" alt="Map" /> </span>{{ row.venue }}</h5>
+                  </div>
+               </div>
+            </div>
+            <div class="zone-center-wrap_new">
+               <div class="cta-link_new">     
+                  <a href="https://www.activesgcircle.gov.sg/things-to-do/events/{{row.event_path }}" class="btn_read_more">Read more</a>
+               </div>
+               {% if row.start_date > local_dt|unixtimestamp and row.end_date > local_dt|unixtimestamp %}
+               <p class="upcoming"><i class="fa fa-circle" aria-hidden="true"></i> Upcoming</p>
+               {% elif row.start_date <= local_dt|unixtimestamp and  row.end_date > local_dt|unixtimestamp %} 
+               <p class="on-going"><i class="fa fa-circle" aria-hidden="true"></i> On Going</p>
+               {% elif row.end_date < local_dt|unixtimestamp  %}
+               <p class="past"><i class="fa fa-circle" aria-hidden="true"></i> Past</p>
+               {% endif %}
+
+            </div>
+         </div>
+      </div>
+      {% endfor %}
+      {% endif %}
+   </div>
+</div>
+

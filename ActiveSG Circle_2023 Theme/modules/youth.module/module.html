@@ -1,0 +1,31 @@
+<div class="cst-watch-grp">
+   <div class="cst-ttl-grp">
+      <h3>{{ module.header }}</h3>
+      <div class="cst-vw-btn">
+         {% set href = module.link.url.href %}
+         {% if module.link.url.type is equalto "EMAIL_ADDRESS" %}
+         {% set href = "mailto:" + href %}
+         {% endif %}
+         <a class="view-link" href="{{ href }}"
+            {% if module.link.open_in_new_tab %}target="_blank"{% endif %}
+            {% if module.link.rel %}rel="{{ module.link.rel }}"{% endif %}
+            >{{ module.button_text }}</a>
+      </div>
+   </div>
+   {% set rec_posts = blog_recent_tag_posts(module.blog_field, module.tag_field, 1) %}
+   {% for rec_post in rec_posts %}
+   <div class="cst-video-item">
+      <div class="iiner" style="background-image:url('{{ rec_post.featured_image }}');">
+         <a href="{{ rec_post.absolute_url }}" style="text-decoration:none;">
+            <div class="cst-title">
+               <h5>
+                  {{ rec_post.name }}
+               </h5>
+            </div>
+         </a>
+      </div>
+   </div>
+   {% endfor %}
+</div>
+
+

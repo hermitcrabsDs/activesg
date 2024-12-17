@@ -1,0 +1,11 @@
+<span class="hdr-txt">{{ module.header_text }}</span>
+
+{% require_js %}
+<script>
+   $(document).ready(function(){
+      $('.hdr-txt').appendTo('.cst-header-tabber-grp .cst-icn-btn-grp .tab-text');
+      $(".cst-icon img").attr("src", "{{ module.icon_image.src }}");
+                              $('body').addClass('{{ module.header_text|regex_replace("[^a-zA-Z]","") }}');
+                                                 });
+</script>
+{% end_require_js %}

@@ -1,0 +1,37 @@
+{# Need help setting up site search?
+   Start here: https://knowledge.hubspot.com/articles/kcs_article/cos-general/how-do-i-set-up-a-results-page-for-my-search-field-in-hubspot #}
+
+<div class="hs-search-field"> 
+    <div class="hs-search-field__bar"> 
+      <form action="/{{ site_settings.content_search_results_page_path }}">
+        {% if module.field_label %}
+          <label for="term">{{ module.field_label }}</label>
+        {% endif %}
+        <input type="text" class="hs-search-field__input" name="term" autocomplete="off" aria-label="{{ module.field_label || "Search" }}" placeholder="{{ module.placeholder }}">
+        
+        {% if module.content_types.website_pages %}
+          <input type="hidden" name="type" value="SITE_PAGE">
+        {% endif %}
+        {% if module.content_types.landing_pages %}
+          <input type="hidden" name="type" value="LANDING_PAGE">
+        {% endif %}
+        {% if module.content_types.blog_posts %}
+          <input type="hidden" name="type" value="BLOG_POST">
+          <input type="hidden" name="type" value="LISTING_PAGE">
+        {% endif %}
+        {% if module.content_types.knowledge_articles %}
+          <input type="hidden" name="type" value="KNOWLEDGE_ARTICLE">
+        {% endif %}
+
+        {% if module.include_search_button %}
+          <button aria-label="Search">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="16" viewBox="0 0 18 16" fill="none">
+                  <path d="M8.87111 13.9999C12.6502 13.9999 15.7138 11.1644 15.7138 7.66659C15.7138 4.16878 12.6502 1.33325 8.87111 1.33325C5.09202 1.33325 2.02846 4.16878 2.02846 7.66659C2.02846 11.1644 5.09202 13.9999 8.87111 13.9999Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M16.4341 14.6666L14.9935 13.3333" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+          </button>
+        {% endif %}
+      </form>
+    </div>
+    <ul class="hs-search-field__suggestions"></ul>
+</div>

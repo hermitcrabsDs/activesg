@@ -1,0 +1,88 @@
+<!--
+templateType: global_partial
+label: Website header
+-->
+<header class="header">
+   {% dnd_area "header-top" label="Top header"  %} {% end_dnd_area %}
+   <!-- Main header -->
+   <div class="header__container content-wrapper">
+      <div class="row align-items-center justify-content-between">
+         <div class="col col__left d-flex">
+
+            <div class="header__logo">
+               {% set logo_file =  get_asset_url('../../images/activeSG_Logo.png') %}
+               {% module "header_logo" path="@hubspot/logo", label="Header Logo", img={src= "{{logo_file}}", override_inherited_src= true, alt= {{ site_settings.company_name }}} %}
+            </div>
+            <div class="cst-hdr-top-grp visible-phone">
+               {% module "header_top_menu_mob" path="../../modules/header top menu", label="Header top menu mobile", no_wrapper="true" %}
+            </div>
+
+            <div class="custom-menu-primary">
+               <div class="header_search visible-phone">
+                  <div class="header__search header--element">
+                     {% module "Search" path="../../modules/search-input", label="search_input" %}     
+                  </div>
+               </div>
+               <div class="header_top-menu hidden-phone">
+                  {% module "header_top_menu" path="../../modules/header top menu", label="header top menu" %}
+               </div>
+
+
+            </div>
+            <div class="header_icon-atbe visible-phone">
+
+               {% module "mob_user-grp" path="../../modules/user-profile", label="user-profile", no_wrapper="true" %}
+            </div>
+         </div>
+         <div class="col col__right d-flex align-items-center hidden-phone">
+
+            <div class="col header_buttons">
+               <div class="cst-bnt-desk">
+                  {% module "Header Button" path="../../modules/header-cta", label="Header CTA", no_wrapper="true" %}
+                  <div class="searchDesktop">
+                     {% module 'site_search' path='../../modules/Mobile Search', label='Search', field_label='Search', placeholder='Search' %}
+                  </div>
+               </div>
+
+               {% module "user-grp" path="../../modules/user-profile", label="user-profile", no_wrapper="true" %}
+
+            </div>
+         </div>
+      </div>
+   </div>
+
+   <div class="header-bottom-menu">
+      <a id="mobileTrigger" href="javascript:void(0)" class="mobiletrigger">
+         <i class="line first"></i>
+         <i class="line second"></i>
+         <i class="line third"></i>
+      </a>
+      <div class="header_menu_wrapper">
+         <div class="content-wrapper">
+            <div class="cst-mob-search visible-phone">
+               {% module 'site_search' path='../../modules/Mobile Search', label='Search', field_label='Search', placeholder='Search' %}
+            </div>
+            {% module "Header Navigation" path="../../modules/menu", label="Header Menu" %}
+            <div class="col header_buttons visible-phone">
+               {% module "Header Button" path="../../modules/header-cta", label="Header CTA Mobile" %}
+            </div>
+         </div>
+      </div>
+   </div>
+   {% require_js %}
+   <script>
+      $('header.header').parent().addClass('sticky_hdr');
+      $('.mobiletrigger').click(function(){
+         $('.header_menu_wrapper').slideToggle();
+      });
+   </script>
+   {% end_require_js %}
+   <style>
+      .sticky_hdr {
+         position: sticky;
+         top: 0;
+         z-index: 999;
+      }
+   </style>
+   {% dnd_area "header-bottom"label="Bottom header",class="content-wrapper"%}{% end_dnd_area %}
+</header>

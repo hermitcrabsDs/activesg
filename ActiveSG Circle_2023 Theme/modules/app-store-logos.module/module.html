@@ -1,0 +1,189 @@
+<div class="app-logos">
+   <div class="hs_title"><h6>{{ module.title }}</h6></div>
+   <div class="logos">
+      {% for item in module.add_logos %}
+      <div class="item">
+         {% if item.logo.src %}
+         {% set sizeAttrs = 'width="{{ item.logo.width }}" height="{{ item.logo.height }}"' %}
+         {% if item.logo.size_type == 'auto' %}
+         {% set sizeAttrs = 'width="{{ item.logo.width }}" height="{{ item.logo.height }}" style="max-width: 100%; height: auto;"' %}
+         {% elif item.logo.size_type == 'auto_custom_max' %}
+         {% set sizeAttrs = 'width="{{ item.logo.max_width }}" height="{{ item.logo.max_height }}" style="max-width: 100%; height: auto;"' %}
+         {% endif %}
+         {% set loadingAttr = item.logo.loading != 'disabled' ? 'loading="{{ item.logo.loading }}"' : '' %}
+         <img src="{{ item.logo.src }}" alt="{{ item.logo.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+         {% endif %}
+         <div class="app-links-wrap">
+            <div class="app-links-inner">
+               <div class="app-item">
+                  {% set href = item.apple_store.url.href %}
+                  {% if item.apple_store.url.type is equalto "EMAIL_ADDRESS" %}
+                  {% set href = "mailto:" + href %}
+                  {% endif %}
+                  <a href="{{ href }}"
+                     {% if item.apple_store.open_in_new_tab %}target="_blank"{% endif %}
+                     {% if item.apple_store.rel %}rel="{{ item.apple_store.rel }}"{% endif %}
+                     >
+
+                     <img src="https://6212555.fs1.hubspotusercontent-na1.net/hubfs/6212555/Circle%202.0%20Refresh/images/App_Store_Badge.svg" alt="Apple Store">
+                  </a>
+               </div>
+               <div class="app-item">
+                  {% set href = item.google_play_link.url.href %}
+                  {% if item.google_play_link.url.type is equalto "EMAIL_ADDRESS" %}
+                  {% set href = "mailto:" + href %}
+                  {% endif %}
+                  <a href="{{ href }}"
+                     {% if item.google_play_link.open_in_new_tab %}target="_blank"{% endif %}
+                     {% if item.google_play_link.rel %}rel="{{ item.google_play_link.rel }}"{% endif %}
+                     >
+                     <img src="https://6212555.fs1.hubspotusercontent-na1.net/hubfs/6212555/Circle%202.0%20Refresh/images/google-play-badge%20(1)%20(1).png" alt="Google App Store">
+                  </a>
+               </div>
+            </div>
+         </div>
+      </div>
+      {% endfor %}
+   </div>
+</div>
+
+
+{% require_css %}
+
+<style>
+   .app-logos {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      flex-direction: column;
+   }
+   {% scope_css %}
+   .app-logos .hs_title h6 {
+      color: #ffff;
+   }
+   .app-logos .logos {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+      row-gap: 12px;
+      padding: 0 0 10px;
+   }
+
+
+   .app-logos .item {
+      border-radius: 4px;
+      margin-right: 12px;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      position: relative;
+   }
+
+   .app-logos .item  img {
+      max-width: 50px !important;
+      width: 100%;
+      cursor: pointer;
+   }
+
+   .app-links-wrap {
+      position: absolute;
+      top: 100%;
+      width: 253px;
+      left: auto;
+      margin-top: 15px;
+      opacity: 0;
+      visibility: hidden;
+      transition: .5s all;
+   }
+   .app-links-inner {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+   }
+   .app-links-inner .app-item:first-child {
+      margin-right: 6px;
+   }
+   .app-links-inner .app-item:first-child img {
+      height: 36px !important;
+   }
+   .app-logos .item .app-links-wrap img {
+      max-width: 100% !important;
+      display: block;
+      height: 40px;
+   }
+   .active .app-links-wrap {
+      opacity: 1;
+      visibility: visible;
+
+   }
+   @media (min-width: 890px) {
+      .app-logos .logos {
+         padding-bottom: 30px;
+      }
+   }
+   @media (max-width: 950px) and (min-width: 480px) {
+/*       .app-logos .item:last-child .app-links-wrap {
+         right: 0;
+      }
+      .app-logos .item:last-child .app-links-inner:before,
+      .app-logos .item:last-child .app-links-inner:after {
+         left: 88%;
+      } */
+   }
+   @media (max-width: 767px) {
+      .app-logos .logos {
+         align-items: center;
+/*          justify-content: center; */
+      }
+   }
+   @media (max-width: 479px) {
+      .app-logos .hs_title {
+         text-align: left;
+      }
+      .app-logos .logos{
+         justify-content: flex-start;
+      }
+      .app-links-wrap {
+         left: 0;
+      }
+      .app-links-inner:after, .app-links-inner:before {
+         left: 23px;
+      }
+/*       .app-logos .item:last-child .app-links-wrap {
+             left: -62px;
+      }
+      .app-logos .item:last-child .app-links-inner:before,
+      .app-logos .item:last-child .app-links-inner:after {
+         left: 82px;
+      } */
+   }
+ 
+   {% end_scope_css %}
+</style>
+
+{% end_require_css %}
+
+{% require_js %}
+<script>
+   $('.logos .item').click(function(e){
+      $(this).toggleClass('active');
+      $(this).siblings('.item').removeClass('active');
+      e.stopPropagation();
+   });
+   $('.app-links-wrap').click(function(e){
+      e.stopPropagation();
+   });
+   $('body').click(function(e){
+      $('.item').removeClass('active');
+   });
+
+</script>
+{% end_require_js %}

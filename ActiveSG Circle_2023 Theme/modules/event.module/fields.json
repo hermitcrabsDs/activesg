@@ -1,0 +1,58 @@
+[ {
+  "id" : "cb940666-d2a5-efc3-a475-3b0d0ba1a581",
+  "name" : "header",
+  "display_width" : null,
+  "label" : "Header",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "Events"
+}, {
+  "id" : "6688ed41-ab8e-5de1-2448-c0efeb28ec67",
+  "name" : "select_group",
+  "display_width" : null,
+  "label" : "Select Group",
+  "required" : false,
+  "locked" : false,
+  "display" : "select",
+  "choices" : [ [ "Parents and Children", "Parents & Children" ], [ "Working Adults", "Working Adults" ], [ "Seniors", "Senior/Master" ], [ "Youth", "Youth" ] ],
+  "multiple" : false,
+  "reordering_enabled" : true,
+  "preset" : null,
+  "type" : "choice",
+  "default" : "Working Adults"
+}, {
+  "id" : "7e9d3052-febb-819b-adc9-6f48a60692a6",
+  "name" : "link",
+  "display_width" : null,
+  "label" : "Link",
+  "required" : false,
+  "locked" : false,
+  "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION", "PHONE_NUMBER", "WHATSAPP_NUMBER" ],
+  "show_advanced_rel_options" : false,
+  "type" : "link",
+  "default" : {
+    "url" : {
+      "content_id" : null,
+      "href" : "",
+      "type" : "CONTENT"
+    },
+    "open_in_new_tab" : false,
+    "no_follow" : false
+  }
+}, {
+  "id" : "0beb5aeb-57d3-d234-7a9b-36c05d90a676",
+  "name" : "button_text",
+  "display_width" : null,
+  "label" : "Button text",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "View All"
+} ]

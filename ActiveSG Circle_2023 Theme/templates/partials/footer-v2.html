@@ -1,0 +1,59 @@
+<!--
+templateType: global_partial
+label: Footer V2
+-->
+
+<footer class="footer">
+   <div class="footer-form" id="subscribe">
+      <div class="content-wrapper">      
+         <h5 class="top-title">
+            {% text "top_title" label="Top Title", value="The Best of circle delivered straight to you!" %}
+         </h5>
+         <div class="form-wrap">
+            {% module "form" path="@hubspot/form", label="Footer Form" form=	{ "form_id": "0e65db5f-d680-46f8-a3cd-40e97145c36c"} %}
+         </div>
+      </div>
+   </div>
+   <div class="top-sec">
+      <div class="content-wrapper">    
+         <div class="row footer-row">
+            <div class="footer-content">
+               {% module_block module "section_title_two" path="@hubspot/rich_text" label="Content" %}
+               {% module_attribute "html" %}
+               <h6>Active SG Circle</h6>
+               <p>
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Earum illo delectus laborum libero id ratione quibusdam tempora assumenda quas, pariatur cum minus, aliquid molestiae et nisi dolorem vitae molestias! Voluptate commodi aliquid iusto sequi sit eligendi, quod numquam nihil consectetur eaque error earum laudantium! Temporibus accusamus pariatur quod totam quia.
+               </p>
+               {% end_module_attribute %}
+               {% end_module_block %}
+            </div>
+            <div class="f-logo">
+               {% module "footer_logos" path="../../modules/footer_logos", label="Footer Logos" %}
+            </div> 
+            <div class="app-store">
+              {% module "module_app_store" path="../../modules/app-store-logos", label="App Store Logos" %} 
+            </div>
+         </div>
+         <div class="f-menu">
+            {% menu "site_menu" id=104937697573, flyouts='true', max_levels='2', flow='horizontal', label='Footer Menu Main' %}	
+         </div>  
+         {#<div class="f-bottom-menu-right f-bottom-menu">
+            {% menu "site_menu_right" id=107488990109, flyouts='true', max_levels='2', flow='horizontal', label='Footer Menu Right' %}	
+         </div>#}
+         <div class="footer-bottom">
+            <div class="f-bottom-menu-left f-bottom-menu">
+               {% menu "site_menu_left" id=107492534443, flyouts='true', max_levels='2', flow='horizontal', label='Footer Menu Left' %}	
+            </div>
+            <div class="copyright-sec">
+               {% module_block module "social icons" path="@hubspot/rich_text"  label="Copyright"%}
+               {% module_attribute "html" %}
+               <p>
+                  © {{ year }} Government of Singapore
+               </p>
+               {% end_module_attribute %}
+               {% end_module_block %}
+            </div>
+         </div>
+      </div>
+   </div>   
+</footer>

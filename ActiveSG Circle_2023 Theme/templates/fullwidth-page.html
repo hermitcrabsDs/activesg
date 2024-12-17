@@ -1,0 +1,35 @@
+<!--
+templateType: page
+isAvailableForNewContent: true
+label: Fullwidth Page
+-->
+{% extends "./layouts/welcome-base.html" %}
+
+{% block body %}
+<div class="body-container">
+   {% dnd_area "dnd_area"
+  label="Main section",
+  class="body-container body-container-fullwidth-test"
+%}
+   {% end_dnd_area %}
+   {% dnd_area "dnd_area2"
+  label="Main section",
+  class="body-container cst-r2-grp"
+%}
+   {% end_dnd_area %}
+   {% dnd_area "dnd_area3"
+  label="Main section",
+  class="body-container cst-r3-grp"
+%}
+   {% end_dnd_area %}
+</div>
+{% require_css %}
+<style>
+   .cst-header-tabber-grp .cst-icn-btn-grp {
+      width: 100%;
+      opacity: 1!important;
+      visibility: visible!important;
+   }
+</style>
+{% end_require_css %}
+{% endblock body %}

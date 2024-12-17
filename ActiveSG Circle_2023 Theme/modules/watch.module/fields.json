@@ -1,0 +1,102 @@
+[ {
+  "id" : "cb940666-d2a5-efc3-a475-3b0d0ba1a581",
+  "name" : "header",
+  "display_width" : null,
+  "label" : "Header",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "Watch"
+}, {
+  "id" : "7e9d3052-febb-819b-adc9-6f48a60692a6",
+  "name" : "link",
+  "display_width" : null,
+  "label" : "Link",
+  "required" : false,
+  "locked" : false,
+  "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION", "PHONE_NUMBER", "WHATSAPP_NUMBER" ],
+  "show_advanced_rel_options" : false,
+  "type" : "link",
+  "default" : {
+    "url" : {
+      "content_id" : null,
+      "type" : "EXTERNAL",
+      "href" : ""
+    },
+    "open_in_new_tab" : false,
+    "no_follow" : false
+  }
+}, {
+  "id" : "0beb5aeb-57d3-d234-7a9b-36c05d90a676",
+  "name" : "button_text",
+  "display_width" : null,
+  "label" : "Button text",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "View All"
+}, {
+  "id" : "a308f202-d631-edf1-5581-2cfd5e97b6b2",
+  "name" : "watch_item",
+  "display_width" : null,
+  "label" : "Watch item",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "f2d8b694-3911-d524-3d46-4cc81f2c3260",
+    "name" : "image",
+    "display_width" : null,
+    "label" : "Image",
+    "required" : false,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : true,
+    "show_loading" : false,
+    "type" : "image",
+    "default" : {
+      "size_type" : "auto",
+      "src" : "https://6212555.fs1.hubspotusercontent-na1.net/hubfs/6212555/Rectangle%20474.png",
+      "alt" : "Rectangle 474",
+      "loading" : "lazy",
+      "width" : 386,
+      "height" : 230,
+      "max_width" : 386,
+      "max_height" : 230
+    }
+  }, {
+    "id" : "6feb295f-37b6-bb91-28bb-92646b1486c9",
+    "name" : "title",
+    "display_width" : null,
+    "label" : "Title",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "Cras quis mauris sed<br> ipsum hendrerit "
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "default" : {
+    "image" : {
+      "size_type" : "auto",
+      "src" : "https://6212555.fs1.hubspotusercontent-na1.net/hubfs/6212555/Rectangle%20474.png",
+      "alt" : "Rectangle 474",
+      "loading" : "lazy",
+      "width" : 386,
+      "height" : 230,
+      "max_width" : 386,
+      "max_height" : 230
+    },
+    "title" : "Cras quis mauris sed<br> ipsum hendrerit "
+  }
+} ]

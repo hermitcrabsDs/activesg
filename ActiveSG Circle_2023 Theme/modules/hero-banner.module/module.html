@@ -1,0 +1,15 @@
+<div class="cst-banner-grp" style="background-image:url('{{ module.banner_image.src }}');">
+   <div class="overlay" style="background-color:rgba({{ module.overlay_color.color|convert_rgb }},{{ module.overlay_color.opacity/100 }});">
+      
+   </div>
+   <div class="page-center content-wrapper">
+      <div class="cst-bn-con-grp">
+         <div class="cst-bn-con">
+            {% if module.banner_title %}<h1>{{ module.banner_title }}</h1>{% endif %}
+            {% if module.content %}<div class="dsep">
+               {{ module.content }}
+            </div>{% endif %}
+         </div>
+      </div>
+   </div>
+</div>

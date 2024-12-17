@@ -1,0 +1,5 @@
+.OlderAdult .cst-header-tabber-grp a img,
+body.Parent .cst-header-tabber-grp a img,
+body.YoungAdult .cst-header-tabber-grp a img {
+   max-width: 20px!important;
+}

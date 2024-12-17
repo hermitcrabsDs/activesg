@@ -1,0 +1,50 @@
+<!--
+templateType: global_partial
+label: Footer
+-->
+
+<footer class="footer">
+
+   <div class="top-sec">
+      <div class="content-wrapper"> 
+         <h5 class="top-title">
+            {% text "top_title" label="Top Title", value="The Best of Circle delivered straight to you!" %}
+         </h5>
+         <div class="form-wrap">
+            {% module "form" path="@hubspot/form", label="Footer Form" form=	{ "form_id": "0e65db5f-d680-46f8-a3cd-40e97145c36c"} %}
+         </div>
+         <div class="f-menu">
+            {% menu "site_menu" id=104937697573, flyouts='true', max_levels='2', flow='horizontal', label='Footer Menu' %}	
+         </div>
+         <div class="border"></div>
+      </div>
+   </div>
+   <div class="bottom-sec">
+      <div class="content-wrapper"> 
+         <div class="s-img">
+            {% module "footer_image" path="@hubspot/linked_image" img={ src= "{{ get_asset_url('../../images/sport singapore.png') }}",alt= "sport singapore", width= 133 } %}
+         </div>
+         
+         <div class="f-logos">
+            {% module "footer_logos" path="../../modules/footer_logos", label="Footer Logos" %}
+         </div> 
+      </div>
+      <div class="copyright-sec">
+         <div class="content-wrapper c-main"> 
+            <div class="c-right-main">
+               {% module_block module "social icons" path="@hubspot/rich_text"  label="social icons"%}
+               {% module_attribute "html" %}
+               <p>
+                  Copyright © {{ year }} Sport Singapore.  All Rights Reserved   |   <a href="#">Terms Conditions</a>   |   <a href="#">Privacy Policy</a>
+               </p>
+               {% end_module_attribute %}
+               {% end_module_block %}
+            </div>
+            <div class="social-share">
+               {% module "footer_social_share" path="../../modules/footer_social_share", label="Footer Social Share" %}
+            </div>
+         </div>
+      </div>
+   </div>
+
+</footer>

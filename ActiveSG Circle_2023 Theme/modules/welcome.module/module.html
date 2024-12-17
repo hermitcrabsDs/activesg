@@ -1,0 +1,210 @@
+
+<div class="cst-welcome-grp" style="background-image:url('{{ module.background_image.src }}');">
+   <style>
+      .cst-wel-item:before {
+         content: '';
+         width: 100%;
+         height: 100%;
+         background-color: rgba({{ module.style.background_color.color|convert_rgb }},{{ module.style.background_color.opacity/100 }});
+         position: absolute;
+         top: 0;
+         left: 0;
+         right: 0;
+      }
+   </style>
+
+   <div class="cst-row">    
+      {% for item in module.add_column %}
+      <div class="cst-icon custom-con coll-{{ loop.index }} hidden-phone">
+         {% if item.icon_image.src %}
+         {% set sizeAttrs = 'width="{{ item.icon_image.width }}" height="{{ item.icon_image.height }}"' %}
+         {% if item.icon_image.size_type == 'auto' %}
+         {% set sizeAttrs = 'width="{{ item.icon_image.width }}" height="{{ item.icon_image.height }}" style="max-width: 100%; height: auto;"' %}
+         {% elif item.icon_image.size_type == 'auto_custom_max' %}
+         {% set sizeAttrs = 'width="{{ item.icon_image.max_width }}" height="{{ item.icon_image.max_height }}" style="max-width: 100%; height: auto;"' %}
+         {% endif %}
+         {% set loadingAttr = item.icon_image.loading != 'disabled' ? 'loading="{{ item.icon_image.loading }}"' : '' %}
+         <img src="{{ item.icon_image.src }}" alt="{{ item.icon_image.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+         {% endif %}
+      </div>
+      {% endfor %}
+      {% for item in module.add_column %}
+      {% set href = item.link.url.href %}
+      {% if item.link.url.type is equalto "EMAIL_ADDRESS" %}
+      {% set href = "mailto:" + href %}
+      {% endif %}
+      <div class="cst-accor-well-item coll-{{ loop.index }} visible-phone" data-aos="fade-down" data-aos-duration="{{ loop.index * 5 }}00">
+         <div class="cst-accordion-tab-grp visible-phone">
+            <div class="cst-inner">
+               <div class="cst-acc-icon">
+                  {% if item.icon_image.src %}
+                  {% set sizeAttrs = 'width="{{ item.icon_image.width }}" height="{{ item.icon_image.height }}"' %}
+                  {% if item.icon_image.size_type == 'auto' %}
+                  {% set sizeAttrs = 'width="{{ item.icon_image.width }}" height="{{ item.icon_image.height }}" style="max-width: 100%; height: auto;"' %}
+                  {% elif item.icon_image.size_type == 'auto_custom_max' %}
+                  {% set sizeAttrs = 'width="{{ item.icon_image.max_width }}" height="{{ item.icon_image.max_height }}" style="max-width: 100%; height: auto;"' %}
+                  {% endif %}
+                  {% set loadingAttr = item.icon_image.loading != 'disabled' ? 'loading="{{ item.icon_image.loading }}"' : '' %}
+                  <img src="{{ item.icon_image.src }}" alt="{{ item.icon_image.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+                  {% endif %}
+               </div><div class="cst-ttle-grp">
+               <h5>
+                  {{ item.title }}
+               </h5>
+               <div class="cst-tgr">
+                  <i class="fa fa-chevron-down"></i>
+               </div>
+               </div>
+            </div>
+         </div>
+         <div class="cst-con-acc-grp">
+            <div class="in">
+               <div class="cst-img-acc-grp">
+                  {% if item.image.src %}
+                  {% set sizeAttrs = 'width="{{ item.image.width }}" height="{{ item.image.height }}"' %}
+                  {% if item.image.size_type == 'auto' %}
+                  {% set sizeAttrs = 'width="{{ item.image.width }}" height="{{ item.image.height }}" style="max-width: 100%; height: auto;"' %}
+                  {% elif item.image.size_type == 'auto_custom_max' %}
+                  {% set sizeAttrs = 'width="{{ item.image.max_width }}" height="{{ item.image.max_height }}" style="max-width: 100%; height: auto;"' %}
+                  {% endif %}
+                  {% set loadingAttr = item.image.loading != 'disabled' ? 'loading="{{ item.image.loading }}"' : '' %}
+                  <img src="{{ item.image.src }}" alt="{{ item.image.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+                  {% endif %}
+               </div>
+               <h5>
+                  {{ item.title }}
+               </h5>
+               <div class="cst-desp">
+                  {{ item.content }}
+               </div>
+               <div class="cst-arrw">
+                  <a href="{{ href }}"
+                     {% if item.link.open_in_new_tab %}target="_blank"{% endif %}
+                     {% if item.link.rel %}rel="{{ item.link.rel }}"{% endif %}
+                     >
+                     <img src="{{ get_asset_url('/ActiveSG Circle_2023 Theme/images/arrow-right-circle.svg') }}" alt="Arrow">
+                  </a>
+               </div>
+            </div>
+
+         </div>
+      </div>
+      <div class="cst-wel-item coll-{{ loop.index }} deskop-con hidden-phone" data-aos="fade-down" data-aos-duration="{{ loop.index * 5 }}00" data-href="{{ href }}">
+
+         <div class="inner">
+
+
+            <div class="cst-content-grp  {% if not item.image.src %}full-width{% endif %}">
+               <div class="cst-icon-grp">
+                  <div class="cst-icon">
+                     {% if item.icon_image.src %}
+                     {% set sizeAttrs = 'width="{{ item.icon_image.width }}" height="{{ item.icon_image.height }}"' %}
+                     {% if item.icon_image.size_type == 'auto' %}
+                     {% set sizeAttrs = 'width="{{ item.icon_image.width }}" height="{{ item.icon_image.height }}" style="max-width: 100%; height: auto;"' %}
+                     {% elif item.icon_image.size_type == 'auto_custom_max' %}
+                     {% set sizeAttrs = 'width="{{ item.icon_image.max_width }}" height="{{ item.icon_image.max_height }}" style="max-width: 100%; height: auto;"' %}
+                     {% endif %}
+                     {% set loadingAttr = item.icon_image.loading != 'disabled' ? 'loading="{{ item.icon_image.loading }}"' : '' %}
+                     <img src="{{ item.icon_image.src }}" alt="{{ item.icon_image.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+                     {% endif %}
+                  </div>
+               </div>
+               <div class="cst-ttle-grp">
+                  <h5>
+                     {{ item.title }}
+                  </h5>
+                  <div class="cst-desp">
+                     {{ item.content }}
+                  </div>
+                  <div class="cst-arrw">
+                     <img src="{{ get_asset_url('/ActiveSG Circle_2023 Theme/images/arrow-right-circle.svg') }}" alt="Arrow">
+                  </div>
+               </div>
+            </div>
+              {% if item.image.src %}
+            <div class="cst-img-col-grp">
+               {% if item.image.src %}
+               {% set sizeAttrs = 'width="{{ item.image.width }}" height="{{ item.image.height }}"' %}
+               {% if item.image.size_type == 'auto' %}
+               {% set sizeAttrs = 'width="{{ item.image.width }}" height="{{ item.image.height }}" style="max-width: 100%; height: auto;"' %}
+               {% elif item.image.size_type == 'auto_custom_max' %}
+               {% set sizeAttrs = 'width="{{ item.image.max_width }}" height="{{ item.image.max_height }}" style="max-width: 100%; height: auto;"' %}
+               {% endif %}
+               {% set loadingAttr = item.image.loading != 'disabled' ? 'loading="{{ item.image.loading }}"' : '' %}
+               <img src="{{ item.image.src }}" alt="{{ item.image.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+               {% endif %}
+            </div>
+{% endif  %}
+            
+         </div>
+      </div>
+      {% endfor %}
+   </div>
+</div>
+{% require_js %}
+<script> 
+   $('.cst-welcome-grp .cst-row .cst-wel-item').each(function(){
+      var txt = $(this).find('.cst-ttle-grp h5').text();
+      $(this).click(function(){
+         $('.cst-header-tabber-grp .cst-icn-btn-grp .tab-text').text(txt);
+         $('body').addClass('text-add');
+      });
+   });
+   $('.cst-welcome-grp .cst-row .cst-wel-item.coll-1').click(function(){
+      $('body').toggleClass('icon1'); 
+      $('body').removeClass('icon2');
+      $('body').removeClass('icon3');
+      $('body').removeClass('icon4');
+      var clk1 = $(this).attr('data-href');
+      setTimeout(function() {
+         location.assign(clk1);
+      }, 1500);
+      return false;
+   });
+   $('.cst-welcome-grp .cst-row .cst-wel-item.coll-2').click(function(){
+      $('body').toggleClass('icon2'); 
+      $('body').removeClass('icon1');
+      $('body').removeClass('icon3');
+      $('body').removeClass('icon4');
+      var clk2 = $(this).attr('data-href');
+      setTimeout(function() {
+         location.assign(clk2);
+      }, 1500);
+      return false;
+   });
+   $('.cst-welcome-grp .cst-row .cst-wel-item.coll-3').click(function(){
+      $('body').toggleClass('icon3'); 
+      $('body').removeClass('icon2');
+      $('body').removeClass('icon1');
+      $('body').removeClass('icon4');
+      var clk3 = $(this).attr('data-href');
+      setTimeout(function() {
+         location.assign(clk3);
+      }, 1500);
+      return false;
+   });
+   $('.cst-welcome-grp .cst-row .cst-wel-item.coll-4').click(function(){
+      $('body').toggleClass('icon4'); 
+      $('body').removeClass('icon2');
+      $('body').removeClass('icon1');
+      $('body').removeClass('icon3');
+      var clk4 = $(this).attr('data-href');
+      setTimeout(function() {
+         location.assign(clk4);
+      }, 1500);
+      return false;
+   });
+   $('.cst-welcome-grp .cst-row .cst-wel-item.coll-5').click(function(){
+      $('body').toggleClass('icon5'); 
+      $('body').removeClass('icon4'); 
+      $('body').removeClass('icon2');
+      $('body').removeClass('icon1');
+      $('body').removeClass('icon3');
+      var clk4 = $(this).attr('data-href');
+      setTimeout(function() {
+         location.assign(clk4);
+      }, 1500);
+      return false;
+   });
+</script>
+{% end_require_js %}

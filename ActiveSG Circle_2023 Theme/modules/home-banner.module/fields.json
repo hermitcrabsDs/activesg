@@ -1,0 +1,477 @@
+[ {
+  "id" : "5b5ead6a-c990-9bf5-dc34-0f0b363cedeb",
+  "name" : "slide_item",
+  "display_width" : null,
+  "label" : "Slide Item",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : "a7241440-781a-a8ad-8e5b-e932ae907841",
+    "default" : 3
+  },
+  "children" : [ {
+    "id" : "9da9b48a-b8f8-7fa4-8f06-ae5ffbcb0c53",
+    "name" : "background_image",
+    "display_width" : null,
+    "label" : "Background Image",
+    "required" : false,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : true,
+    "show_loading" : false,
+    "type" : "image",
+    "default" : {
+      "size_type" : "auto",
+      "src" : "https://6212555.fs1.hubspotusercontent-na1.net/hubfs/6212555/AcademiesClubs_2023%20Theme/images/home-banner.png",
+      "alt" : "home-banner",
+      "loading" : "lazy",
+      "width" : 1440,
+      "height" : 600,
+      "max_width" : 1440,
+      "max_height" : 600
+    }
+  }, {
+    "id" : "60f24f8c-6d21-f205-c7d4-f29cbc7a15e1",
+    "name" : "overlay_color",
+    "display_width" : null,
+    "label" : "Overlay Color",
+    "required" : false,
+    "locked" : false,
+    "type" : "color",
+    "default" : {
+      "color" : "#000000",
+      "opacity" : 26
+    }
+  }, {
+    "id" : "a7241440-781a-a8ad-8e5b-e932ae907841",
+    "name" : "heading",
+    "display_width" : null,
+    "label" : "Heading",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "Men’s World Floorball Championships 2022"
+  }, {
+    "id" : "2868202d-1482-40be-8ae5-412de9113614",
+    "name" : "button",
+    "display_width" : null,
+    "label" : "Button",
+    "required" : false,
+    "locked" : false,
+    "occurrence" : {
+      "min" : null,
+      "max" : null,
+      "sorting_label_field" : "0dbb5ae0-9617-ccd9-cbec-c5a8b3d6ea6a",
+      "default" : 1
+    },
+    "children" : [ {
+      "id" : "a24cfc9b-dd21-d5c1-4200-8dc9babc5615",
+      "name" : "select_button_type",
+      "display_width" : null,
+      "label" : "Select Button Type",
+      "required" : false,
+      "locked" : false,
+      "display" : "select",
+      "choices" : [ [ "standard", "Standard" ], [ "cta", "Call To Action" ], [ "modal", "Popup" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "default" : "modal"
+    }, {
+      "id" : "fc26f64e-495a-651b-508e-45077d6132f3",
+      "name" : "select_button_style",
+      "display_width" : null,
+      "label" : "Select Button Style",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : null,
+        "controlling_field_path" : "slide_item.button.select_button_type",
+        "controlling_value_regex" : "standard|modal",
+        "property" : null,
+        "operator" : "MATCHES_REGEX",
+        "access" : null
+      },
+      "display" : "select",
+      "choices" : [ [ "red", "Red" ], [ "white", "White" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "default" : "red"
+    }, {
+      "id" : "0dbb5ae0-9617-ccd9-cbec-c5a8b3d6ea6a",
+      "name" : "button_text",
+      "display_width" : null,
+      "label" : "Button Text",
+      "required" : false,
+      "locked" : false,
+      "validation_regex" : "",
+      "visibility" : {
+        "controlling_field" : null,
+        "controlling_field_path" : "slide_item.button.select_button_type",
+        "controlling_value_regex" : "standard|modal",
+        "property" : null,
+        "operator" : "MATCHES_REGEX",
+        "access" : null
+      },
+      "allow_new_line" : false,
+      "show_emoji_picker" : false,
+      "type" : "text",
+      "default" : "View More"
+    }, {
+      "id" : "98a77fb8-5df8-30f0-5d3f-4a6da9b40b3e",
+      "name" : "select_icon",
+      "display_width" : null,
+      "label" : "Select Icon",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : null,
+        "controlling_field_path" : "slide_item.button.select_button_type",
+        "controlling_value_regex" : "modal",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
+      "icon_set" : "fontawesome-5.14.0",
+      "type" : "icon",
+      "default" : {
+        "name" : "Play Circle",
+        "unicode" : "f144",
+        "type" : "REGULAR"
+      }
+    }, {
+      "id" : "6d9f4334-558f-cd9f-5307-138f29c74dad",
+      "name" : "link_field",
+      "display_width" : null,
+      "label" : "Link",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : null,
+        "controlling_field_path" : "slide_item.button.select_button_type",
+        "controlling_value_regex" : "standard",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
+      "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION" ],
+      "show_advanced_rel_options" : false,
+      "type" : "link",
+      "default" : {
+        "url" : {
+          "content_id" : null,
+          "type" : "EXTERNAL",
+          "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      }
+    }, {
+      "id" : "b6b7a6f9-3c7f-7147-cded-40c4dabcb3e1",
+      "name" : "cta_field",
+      "display_width" : null,
+      "label" : "CTA",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : null,
+        "controlling_field_path" : "slide_item.button.select_button_type",
+        "controlling_value_regex" : "cta",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
+      "type" : "cta"
+    }, {
+      "id" : "3bc75707-117c-8d6d-e63e-26b5644f0a13",
+      "name" : "video_group",
+      "display_width" : null,
+      "label" : "Video Group",
+      "required" : false,
+      "locked" : false,
+      "children" : [ {
+        "id" : "d6bf20e0-559a-ef21-ac09-8cf990512542",
+        "name" : "select_video_type",
+        "display_width" : null,
+        "label" : "Select Video Type",
+        "required" : false,
+        "locked" : false,
+        "display" : "select",
+        "choices" : [ [ "youtube", "Youtube" ], [ "vimeo", "Vimeo" ], [ "custom", "Custom" ] ],
+        "multiple" : false,
+        "reordering_enabled" : true,
+        "preset" : null,
+        "type" : "choice",
+        "default" : "youtube"
+      }, {
+        "id" : "ee7cd8d6-3cd6-8e51-447f-bb02a61a9ada",
+        "name" : "video_id",
+        "display_width" : null,
+        "label" : "Video ID",
+        "required" : false,
+        "locked" : false,
+        "validation_regex" : "",
+        "visibility" : {
+          "controlling_field" : null,
+          "controlling_field_path" : "slide_item.button.video_group.select_video_type",
+          "controlling_value_regex" : "youtube|vimeo",
+          "property" : null,
+          "operator" : "MATCHES_REGEX",
+          "access" : null
+        },
+        "allow_new_line" : false,
+        "show_emoji_picker" : false,
+        "type" : "text"
+      }, {
+        "picker" : "file",
+        "id" : "f579ef01-0b46-ec80-d442-ee7a857b425b",
+        "name" : "select_video",
+        "display_width" : null,
+        "label" : "Select Video",
+        "required" : false,
+        "locked" : false,
+        "visibility" : {
+          "controlling_field" : null,
+          "controlling_field_path" : "slide_item.button.video_group.select_video_type",
+          "controlling_value_regex" : "custom",
+          "property" : null,
+          "operator" : "EQUAL",
+          "access" : null
+        },
+        "type" : "file"
+      } ],
+      "tab" : "CONTENT",
+      "expanded" : false,
+      "group_occurrence_meta" : null,
+      "type" : "group",
+      "default" : {
+        "select_video_type" : "youtube"
+      }
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "default" : [ {
+      "select_button_type" : "modal",
+      "select_button_style" : "red",
+      "button_text" : "View More",
+      "select_icon" : {
+        "name" : "Play Circle",
+        "unicode" : "f144",
+        "type" : "REGULAR"
+      },
+      "link_field" : {
+        "url" : {
+          "content_id" : null,
+          "type" : "EXTERNAL",
+          "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      },
+      "video_group" : {
+        "select_video_type" : "youtube"
+      }
+    } ]
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "default" : [ {
+    "background_image" : {
+      "size_type" : "auto",
+      "src" : "https://6212555.fs1.hubspotusercontent-na1.net/hubfs/6212555/AcademiesClubs_2023%20Theme/images/home-banner.png",
+      "alt" : "home-banner",
+      "loading" : "lazy",
+      "width" : 1440,
+      "height" : 600,
+      "max_width" : 1440,
+      "max_height" : 600
+    },
+    "heading" : "Men’s World Floorball Championships 2022",
+    "button" : [ {
+      "select_button_type" : "modal",
+      "select_button_style" : "red",
+      "button_text" : "View More",
+      "select_icon" : {
+        "name" : "Play Circle",
+        "unicode" : "f144",
+        "type" : "REGULAR"
+      },
+      "link_field" : {
+        "url" : {
+          "content_id" : null,
+          "type" : "EXTERNAL",
+          "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      },
+      "video_group" : {
+        "select_video_type" : "youtube"
+      }
+    } ],
+    "overlay_color" : {
+      "color" : "#000000",
+      "opacity" : 26
+    }
+  }, {
+    "background_image" : {
+      "size_type" : "auto",
+      "src" : "https://6212555.fs1.hubspotusercontent-na1.net/hubfs/6212555/AcademiesClubs_2023%20Theme/images/home-banner.png",
+      "alt" : "home-banner",
+      "loading" : "lazy",
+      "width" : 1440,
+      "height" : 600,
+      "max_width" : 1440,
+      "max_height" : 600
+    },
+    "heading" : "Men’s World Floorball Championships 2022",
+    "button" : [ {
+      "select_button_type" : "modal",
+      "select_button_style" : "red",
+      "button_text" : "View More",
+      "select_icon" : {
+        "name" : "Play Circle",
+        "unicode" : "f144",
+        "type" : "REGULAR"
+      },
+      "link_field" : {
+        "url" : {
+          "content_id" : null,
+          "type" : "EXTERNAL",
+          "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      },
+      "video_group" : {
+        "select_video_type" : "youtube"
+      }
+    } ],
+    "overlay_color" : {
+      "color" : "#000000",
+      "opacity" : 26
+    }
+  }, {
+    "background_image" : {
+      "size_type" : "auto",
+      "src" : "https://6212555.fs1.hubspotusercontent-na1.net/hubfs/6212555/AcademiesClubs_2023%20Theme/images/home-banner.png",
+      "alt" : "home-banner",
+      "loading" : "lazy",
+      "width" : 1440,
+      "height" : 600,
+      "max_width" : 1440,
+      "max_height" : 600
+    },
+    "heading" : "Men’s World Floorball Championships 2022",
+    "button" : [ {
+      "select_button_type" : "modal",
+      "select_button_style" : "red",
+      "button_text" : "View More",
+      "select_icon" : {
+        "name" : "Play Circle",
+        "unicode" : "f144",
+        "type" : "REGULAR"
+      },
+      "link_field" : {
+        "url" : {
+          "content_id" : null,
+          "type" : "EXTERNAL",
+          "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      },
+      "video_group" : {
+        "select_video_type" : "youtube"
+      }
+    } ],
+    "overlay_color" : {
+      "color" : "#000000",
+      "opacity" : 26
+    }
+  } ]
+}, {
+  "id" : "0de161b1-0449-28e9-9c5d-8f513a69709b",
+  "name" : "style",
+  "display_width" : null,
+  "label" : "Style",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "a08f5013-24b1-7159-29b8-c23ebbd2e37c",
+    "name" : "spacing",
+    "display_width" : null,
+    "label" : "Spacing",
+    "required" : false,
+    "locked" : false,
+    "type" : "spacing",
+    "default" : {
+      "padding" : {
+        "top" : {
+          "value" : 74,
+          "units" : "px"
+        },
+        "bottom" : {
+          "value" : 190,
+          "units" : "px"
+        },
+        "left" : {
+          "value" : null,
+          "units" : null
+        },
+        "right" : {
+          "value" : null,
+          "units" : null
+        }
+      }
+    }
+  }, {
+    "id" : "2d4b6fd5-9957-052a-abae-346af737edf9",
+    "name" : "mobile_spacing",
+    "display_width" : null,
+    "label" : "Mobile Spacing",
+    "required" : false,
+    "locked" : false,
+    "type" : "spacing",
+    "default" : { }
+  } ],
+  "tab" : "STYLE",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "default" : {
+    "spacing" : {
+      "padding" : {
+        "top" : {
+          "value" : 74,
+          "units" : "px"
+        },
+        "bottom" : {
+          "value" : 190,
+          "units" : "px"
+        },
+        "left" : {
+          "value" : null,
+          "units" : null
+        },
+        "right" : {
+          "value" : null,
+          "units" : null
+        }
+      }
+    },
+    "mobile_spacing" : { }
+  }
+} ]

@@ -1,0 +1,56 @@
+{# Module styles #}
+
+{# Menu items #}
+
+{% macro menu_items() %}
+
+{% set menu = menu(module.menu, "site_root").children %}
+
+{% macro render_link_item(link, depth) %}
+<li class="{% if content.absolute_url == link.url %} active {% endif%} menu-item menu-item--depth-{{ depth }} {{ "menu-item--has-submenu" if link.children and depth < module.max_levels }} hs-skip-lang-url-rewrite">
+   {% if link.url %}
+   <a class="menu-link {{ "menu-link--toggle" if link.children and depth < module.max_levels }} {{ "menu-link--active-branch" if link.activeBranch }} {{ "menu__link--active-link" if link.activeNode }}" href="{{ link.url }}" {{ 'aria-haspopup="true" aria-expanded="false"' if link.children and depth < module.max_levels }} {{ 'aria-current="page"' if link.activeNode }} {{ 'target="_blank" rel="noopener"' if link.linkTarget }}>{{ link.label }}
+   </a>
+   {% else %}
+   {% if link.children and depth < module.max_levels %}
+   <a class="menu-link menu-link--toggle" href="#" aria-haspopup="true" aria-expanded="false">{{ link.label }}</a>
+   {% else %}
+   <a class="menu-link {{ "menu-link--toggle" if link.children and depth < module.max_levels }} {{ "menu-link--active-branch" if link.activeBranch }} {{ "menu__link--active-link" if link.activeNode }}" href="{{ link.url }}" {{ 'aria-haspopup="true" aria-expanded="false"' if link.children and depth < module.max_levels }} {{ 'aria-current="page"' if link.activeNode }} {{ 'target="_blank" rel="noopener"' if link.linkTarget }}>{{ link.label }}
+   </a>
+   {% endif %}
+   {% endif %}
+   {% if link.children %}
+   {% if depth and depth < module.max_levels %}
+   <div class="menu-child-toggle" aria-expanded="false">
+      <svg width="11" height="7" viewBox="0 0 11 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+         <path opacity="0.8" d="M0.999969 0.999999L5.43529 5.5L9.87061 1" stroke="#6D6D6D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+   </div>
+   <ul class="menu-submenu menu-submenu--level-{{ depth + 1 }} no-list">
+      {% set depth = depth + 1 %}
+      {% for sublink in link.children %}
+      {{ render_link_item(sublink, depth) }}
+      {% endfor %}
+   </ul>
+   {% endif %}
+   {% endif %}
+</li>
+{% endmacro %}
+
+{% for link in menu %}
+{{ render_link_item(link, 1) }}
+{% endfor %}
+
+{% endmacro %}
+
+{# Desktop menu #}
+
+<nav class="menu" aria-label="Main menu">
+   <ul class="menu__wrapper no-list">
+      {{ menu_items() }}
+   </ul>
+</nav>
+
+{# Mobile menu #}
+
+

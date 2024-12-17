@@ -1,0 +1,41 @@
+<div class="button_wrapper">
+   {% for item in module.button_group %}
+   <div class="button_item">
+      {% if item.button_type =="Standard Button"%}
+      {% set href = item.button_link.url.href %}
+      {% if item.button_link.url.type is equalto "EMAIL_ADDRESS" %}
+      {% set href = "mailto:" + href %}
+      {% endif %}
+      <a href="{{ href }}" class="{{ item.button_style }} {% if item.add_arrow %} arrow{% endif %} btn"
+         {% if item.button_link.open_in_new_tab %}target="_blank"{% endif %}
+         {% if item.button_link.rel %}rel="{{ item.button_link.rel }}"{% endif %}
+         >
+         {{ item.button_text }}
+      </a>
+      {% elif item.button_type =="bookmark" %}
+      <a href="#{{ item.button_text }}" class="{{ item.button_style }} btn"
+         >{{ item.button_text }}</a>
+      {% else %}
+      {% cta guid="{{ item.cta_button }}" %}
+      {% endif %}
+   </div>
+   {% endfor %}
+</div>
+{% require_css %}
+<style>
+   {% scope_css %}
+   .button_wrapper {
+      display: flex;
+      align-items: center;
+      height: 100%;
+   }
+   .button_item .btn{
+      padding: 5px 20px;
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 1.5;
+      text-transform: uppercase;
+   }
+   {% end_scope_css %}
+</style>
+{% end_require_css%}

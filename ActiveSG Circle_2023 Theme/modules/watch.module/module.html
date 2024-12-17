@@ -1,0 +1,46 @@
+<div class="cst-watch-grp">
+   <div class="cst-ttl-grp">
+      <h3>{{ module.header }}</h3>
+      <div class="cst-vw-btn">
+         {% set href = module.link.url.href %}
+         {% if module.link.url.type is equalto "EMAIL_ADDRESS" %}
+         {% set href = "mailto:" + href %}
+         {% endif %}
+         <a class="view-link" href="{{ href }}"
+            {% if module.link.open_in_new_tab %}target="_blank"{% endif %}
+            {% if module.link.rel %}rel="{{ module.link.rel }}"{% endif %}
+            >{{ module.button_text }}</a>
+      </div>
+   </div>
+   <div class="cst-video-item">
+      <div class="iiner" style="background-image:url('{{ module.watch_item.image.src }}');">
+         <div class="cst-btn">
+            <svg width="103" height="103" viewBox="0 0 103 103" fill="none" xmlns="http://www.w3.org/2000/svg">
+               <g filter="url(#filter0_d_115_2753)">
+                  <circle cx="51.3133" cy="45.3133" r="33.3133" fill="#EE2200"/>
+               </g>
+               <path d="M63.1157 46.9373L46.459 57.3477C46.122 57.5581 45.7388 57.6639 45.3555 57.6639C45.0083 57.6639 44.6606 57.5775 44.346 57.4026C43.6841 57.0357 43.2734 56.3392 43.2734 55.5818V34.761C43.2734 34.0037 43.6841 33.3072 44.346 32.9402C45.0078 32.5712 45.8171 32.5936 46.459 32.9951L63.1157 43.4056C63.7242 43.7868 64.0943 44.4538 64.0943 45.1714C64.0943 45.8891 63.7242 46.5561 63.1157 46.9373Z" fill="white"/>
+               <defs>
+                  <filter id="filter0_d_115_2753" x="0" y="0" width="102.627" height="102.627" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                     <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                     <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                     <feOffset dy="6"/>
+                     <feGaussianBlur stdDeviation="9"/>
+                     <feComposite in2="hardAlpha" operator="out"/>
+                     <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.5 0"/>
+                     <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_115_2753"/>
+                     <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_115_2753" result="shape"/>
+                  </filter>
+               </defs>
+            </svg>
+
+         </div>
+         <div class="cst-title">
+            <h5>
+               {{ module.watch_item.title }}
+            </h5>
+         </div>
+      </div>
+   </div>
+</div>
+

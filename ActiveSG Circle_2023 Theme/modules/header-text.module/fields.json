@@ -1,0 +1,34 @@
+[ {
+  "id" : "2aa321ec-89ad-b296-e3f2-e4301cdafcd2",
+  "name" : "header_text",
+  "display_width" : null,
+  "label" : "Header text",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "Events"
+}, {
+  "id" : "564b1ae1-09b4-ab03-e762-f85cdbd3c349",
+  "name" : "icon_image",
+  "display_width" : null,
+  "label" : "Icon image",
+  "required" : false,
+  "locked" : false,
+  "responsive" : true,
+  "resizable" : true,
+  "show_loading" : false,
+  "type" : "image",
+  "default" : {
+    "size_type" : "auto",
+    "src" : "https://6212555.fs1.hubspotusercontent-na1.net/hubfs/6212555/gg_girl.svg",
+    "alt" : "gg_girl",
+    "loading" : "lazy",
+    "width" : 45,
+    "height" : 45,
+    "max_width" : 45,
+    "max_height" : 45
+  }
+} ]

@@ -1,0 +1,36 @@
+.app-links-inner {
+   border: 2px solid #fff;
+   border-radius: 4px;
+   padding: 5px 5px;
+   position: relative;
+   background: #000000;
+}
+.app-links-inner:after, .app-links-inner:before {
+   border: solid transparent;
+   bottom: 100%;
+   content: " ";
+   height: 0;
+   left: 50%;
+   pointer-events: none;
+   position: absolute;
+   width: 0;
+}
+
+.app-links-inner:after {
+   border-color: rgba(0, 0, 0, 0);
+   border-bottom-color: #000;
+   border-width: 10px;
+   margin-left: -10px;
+}
+.app-links-inner:before {
+   border-color: rgba(255, 255, 255, 0);
+   border-bottom-color: #fff;
+   border-width: 13px;
+   margin-left: -13px;
+}
+@media (max-width: 1300px) {
+
+   .app-links-inner:after, .app-links-inner:before {
+      left: 50%;
+   }
+}

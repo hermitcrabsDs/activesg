@@ -1,0 +1,120 @@
+[ {
+  "id" : "0a136ac2-3aad-808b-4a74-51818102c615",
+  "name" : "title",
+  "display_width" : null,
+  "label" : "Title",
+  "required" : false,
+  "locked" : true,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "Download the App"
+}, {
+  "id" : "b17c479b-80cd-3400-3c54-768250edb028",
+  "name" : "add_logos",
+  "display_width" : null,
+  "label" : "Add Logos",
+  "required" : false,
+  "locked" : true,
+  "occurrence" : {
+    "min" : 1,
+    "max" : 6,
+    "sorting_label_field" : "2b77a5e4-f616-4ff5-b14d-2e6eae0ba923",
+    "default" : 1
+  },
+  "children" : [ {
+    "id" : "2b77a5e4-f616-4ff5-b14d-2e6eae0ba923",
+    "name" : "logo",
+    "display_width" : null,
+    "label" : "Logo",
+    "required" : false,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : true,
+    "show_loading" : false,
+    "type" : "image",
+    "default" : {
+      "size_type" : "auto",
+      "src" : "https://6212555.fs1.hubspotusercontent-na1.net/hubfs/6212555/Circle%202.0%20Refresh/images/activewallet.png",
+      "alt" : "ActiveWallet",
+      "loading" : "lazy",
+      "width" : 613,
+      "height" : 613,
+      "max_width" : 613,
+      "max_height" : 613
+    }
+  }, {
+    "id" : "63134cb6-e134-c864-95fb-668b50456e37",
+    "name" : "apple_store",
+    "display_width" : null,
+    "label" : "Apple store",
+    "required" : false,
+    "locked" : false,
+    "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION", "PHONE_NUMBER", "WHATSAPP_NUMBER" ],
+    "show_advanced_rel_options" : false,
+    "type" : "link",
+    "default" : {
+      "url" : {
+        "content_id" : null,
+        "href" : "https://apps.apple.com/sg/app/activesg/id8275952",
+        "type" : "EXTERNAL"
+      },
+      "open_in_new_tab" : true,
+      "no_follow" : false
+    }
+  }, {
+    "id" : "c5548cfa-d753-689f-d43e-72548897d02d",
+    "name" : "google_play_link",
+    "display_width" : null,
+    "label" : "Google Play Link",
+    "required" : false,
+    "locked" : false,
+    "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION", "PHONE_NUMBER", "WHATSAPP_NUMBER" ],
+    "show_advanced_rel_options" : false,
+    "type" : "link",
+    "default" : {
+      "url" : {
+        "content_id" : null,
+        "href" : "https://play.google.com/store/apps/details?id=com.iapps.ssc&hl=en_US",
+        "type" : "EXTERNAL"
+      },
+      "open_in_new_tab" : true,
+      "no_follow" : false
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "default" : [ {
+    "logo" : {
+      "size_type" : "auto",
+      "src" : "https://6212555.fs1.hubspotusercontent-na1.net/hubfs/6212555/Circle%202.0%20Refresh/images/activewallet.png",
+      "alt" : "ActiveWallet",
+      "loading" : "lazy",
+      "width" : 613,
+      "height" : 613,
+      "max_width" : 613,
+      "max_height" : 613
+    },
+    "google_play_link" : {
+      "url" : {
+        "content_id" : null,
+        "href" : "https://play.google.com/store/apps/details?id=com.iapps.ssc&hl=en_US",
+        "type" : "EXTERNAL"
+      },
+      "open_in_new_tab" : true,
+      "no_follow" : false
+    },
+    "apple_store" : {
+      "url" : {
+        "content_id" : null,
+        "href" : "https://apps.apple.com/sg/app/activesg/id8275952",
+        "type" : "EXTERNAL"
+      },
+      "open_in_new_tab" : true,
+      "no_follow" : false
+    }
+  } ]
+} ]

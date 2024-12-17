@@ -1,0 +1,47 @@
+.home-banner-wrap .slick-dots {
+   list-style: none;
+   margin: 0;
+   padding: 0;
+   text-align: center;
+   position: absolute;
+   bottom: 90px;
+   width: 100%;
+}
+
+.home-banner-wrap .slick-dots li:only-child {
+   display: none;
+}
+
+.home-banner-wrap .slick-dots li {
+   align-items: center;
+   border: 1px dashed #fff;
+   border-radius: 100%;
+   display: inline-flex;
+   font-size: 0;
+   height: 16px;
+   justify-content: center;
+   margin-top: 32px;
+   outline: none;
+   transition: all .15s linear;
+   width: 16px;
+   cursor: pointer;
+}
+
+.home-banner-wrap .slick-dots li button {
+   background: transparent;
+   border: 0;
+   border-radius: 100%;
+   font-size: 0;
+   height: 6px;
+   outline: none;
+   padding: 0;
+   width: 6px;
+}
+
+.home-banner-wrap .slick-dots li:not(:last-child) {
+   margin-right: 10px;
+}
+
+.home-banner-wrap .slick-dots li.slick-active button, .home-banner-wrap .slick-dots li:hover button {
+   background-color: #fff;
+}

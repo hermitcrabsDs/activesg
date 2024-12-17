@@ -1,0 +1,413 @@
+<nav class="menu cst-hdr-top-menu">
+   <ul class="menu__wrapper no-list hidden-phone">
+
+	  {% for item in module.add_child_menu %}
+	  <li class="menu-item">
+
+		 <a class="menu-link" href="javascript:;"><span class="text">{{ item.link_text }}</span> <i class="fa fa-angle-down"></i></a>
+
+		 <ul class="cst-child-emnu-wrapper">
+			<div class="cst-split-col">
+			   {% for item2 in item.add_child_1_menu %}
+			   {% if loop.index % 3 == 1 %}
+			   <li class="cst-child-item">
+				  {% set href = item2.link.url.href %}
+				  {% if item2.link.url.type is equalto "EMAIL_ADDRESS" %}
+				  {% set href = "mailto:" + href %}
+				  {% endif %}
+				  <a class="menu-link" href="{{ href }}"
+					 {% if item2.link.open_in_new_tab %}target="_blank"{% endif %}
+					 {% if item2.link.rel %}rel="{{ item2.link.rel }}"{% endif %}
+					 >
+					 <div class="cst-img">
+						{% if item2.image.src %}
+						{% set sizeAttrs = 'width="{{ item2.image.width }}" height="{{ item2.image.height }}"' %}
+						{% if item2.image.size_type == 'auto' %}
+						{% set sizeAttrs = 'width="{{ item2.image.width }}" height="{{ item2.image.height }}" style="max-width: 100%; height: auto;"' %}
+						{% elif item2.image.size_type == 'auto_custom_max' %}
+						{% set sizeAttrs = 'width="{{ item2.image.max_width }}" height="{{ item2.image.max_height }}" style="max-width: 100%; height: auto;"' %}
+						{% endif %}
+						{% set loadingAttr = item2.image.loading != 'disabled' ? 'loading="{{ item2.image.loading }}"' : '' %}
+						<img src="{{ item2.image.src }}" alt="{{ item2.image.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+						{% endif %}
+					 </div>
+					 <div class="cst-con-grp">
+						<h3>
+						   <span{% if item2.redirect_icon %} class="has_icon"{% endif %}>{{ item2.menu_text }}</span> 
+						   <i class="fa fa-arrow-right"></i>
+						</h3>
+						<div class="cst-btm-con">
+						   {{ item2.bottom_text }}
+						</div>
+					 </div>
+				  </a>
+			   </li>
+			   {% endif %}
+			   {% endfor %}
+			</div>
+			<div class="cst-split-col">
+			   {% for item2 in item.add_child_1_menu %}
+			   {% if loop.index % 3 == 2 %}            
+			   <li class="cst-child-item">
+				  {% set href = item2.link.url.href %}
+				  {% if item2.link.url.type is equalto "EMAIL_ADDRESS" %}
+				  {% set href = "mailto:" + href %}
+				  {% endif %}
+				  <a class="menu-link" href="{{ href }}"
+					 {% if item2.link.open_in_new_tab %}target="_blank"{% endif %}
+					 {% if item2.link.rel %}rel="{{ item2.link.rel }}"{% endif %}
+					 >
+					 <div class="cst-img">
+						{% if item2.image.src %}
+						{% set sizeAttrs = 'width="{{ item2.image.width }}" height="{{ item2.image.height }}"' %}
+						{% if item2.image.size_type == 'auto' %}
+						{% set sizeAttrs = 'width="{{ item2.image.width }}" height="{{ item2.image.height }}" style="max-width: 100%; height: auto;"' %}
+						{% elif item2.image.size_type == 'auto_custom_max' %}
+						{% set sizeAttrs = 'width="{{ item2.image.max_width }}" height="{{ item2.image.max_height }}" style="max-width: 100%; height: auto;"' %}
+						{% endif %}
+						{% set loadingAttr = item2.image.loading != 'disabled' ? 'loading="{{ item2.image.loading }}"' : '' %}
+						<img src="{{ item2.image.src }}" alt="{{ item2.image.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+						{% endif %}
+					 </div>
+					 <div class="cst-con-grp">
+						<h3>
+						   <span{% if item2.redirect_icon %} class="has_icon"{% endif %}>{{ item2.menu_text }}</span> 
+						   <i class="fa fa-arrow-right"></i>
+						</h3>
+						<div class="cst-btm-con">
+						   {{ item2.bottom_text }}
+						</div>
+					 </div>
+				  </a>
+			   </li>           
+			   {% endif %}
+			   {% endfor %}
+			</div>
+			<div class="cst-split-col">
+			   {% for item2 in item.add_child_1_menu %}
+			   {% if loop.index % 3 == 0 %}            
+			   <li class="cst-child-item">
+				  {% set href = item2.link.url.href %}
+				  {% if item2.link.url.type is equalto "EMAIL_ADDRESS" %}
+				  {% set href = "mailto:" + href %}
+				  {% endif %}
+				  <a class="menu-link" href="{{ href }}"
+					 {% if item2.link.open_in_new_tab %}target="_blank"{% endif %}
+					 {% if item2.link.rel %}rel="{{ item2.link.rel }}"{% endif %}
+					 >
+					 <div class="cst-img">
+						{% if item2.image.src %}
+						{% set sizeAttrs = 'width="{{ item2.image.width }}" height="{{ item2.image.height }}"' %}
+						{% if item2.image.size_type == 'auto' %}
+						{% set sizeAttrs = 'width="{{ item2.image.width }}" height="{{ item2.image.height }}" style="max-width: 100%; height: auto;"' %}
+						{% elif item2.image.size_type == 'auto_custom_max' %}
+						{% set sizeAttrs = 'width="{{ item2.image.max_width }}" height="{{ item2.image.max_height }}" style="max-width: 100%; height: auto;"' %}
+						{% endif %}
+						{% set loadingAttr = item2.image.loading != 'disabled' ? 'loading="{{ item2.image.loading }}"' : '' %}
+						<img src="{{ item2.image.src }}" alt="{{ item2.image.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+						{% endif %}
+					 </div>
+					 <div class="cst-con-grp">
+						<h3>
+						   <span{% if item2.redirect_icon %} class="has_icon"{% endif %}>{{ item2.menu_text }}</span> 
+						   <i class="fa fa-arrow-right"></i>
+						</h3>
+						<div class="cst-btm-con">
+						   {{ item2.bottom_text }}
+						</div>
+					 </div>
+				  </a>
+			   </li>           
+			   {% endif %}
+			   {% endfor %}
+			</div>
+		 </ul>
+	  </li> 
+	  {% endfor %}
+   </ul>
+
+
+
+   <ul class="menu__wrapper no-list tab">
+	  {% for item in module.add_child_menu %}
+	  <li class="menu-item">
+		 <a class="menu-link" href="javascript:;"><span class="text">{{ item.link_text }}</span> <i class="fa fa-angle-down"></i></a>
+
+		 <ul class="cst-child-emnu-wrapper">
+
+			<div class="cst-split-col">
+			   {% for column in item.add_child_1_menu %}
+			   <li class="cst-child-item cst-child-item-{{ loop.index }}">
+				  {% set href = column.link.url.href %}
+				  {% if column.link.url.type is equalto "EMAIL_ADDRESS" %}
+				  {% set href = "mailto:" + href %}
+				  {% endif %}
+				  <a class="menu-link" href="{{ href }}"
+					 {% if column.link.open_in_new_tab %}target="_blank"{% endif %}
+					 {% if column.link.rel %}rel="{{ column.link.rel }}"{% endif %}
+					 >
+					 <div class="cst-img">
+						{% if column.image.src %}
+						{% set sizeAttrs = 'width="{{ column.image.width }}" height="{{ column.image.height }}"' %}
+						{% if column.image.size_type == 'auto' %}
+						{% set sizeAttrs = 'width="{{ column.image.width }}" height="{{ column.image.height }}" style="max-width: 100%; height: auto;"' %}
+						{% elif column.image.size_type == 'auto_custom_max' %}
+						{% set sizeAttrs = 'width="{{ column.image.max_width }}" height="{{ column.image.max_height }}" style="max-width: 100%; height: auto;"' %}
+						{% endif %}
+						{% set loadingAttr = column.image.loading != 'disabled' ? 'loading="{{ column.image.loading }}"' : '' %}
+						<img src="{{ column.image.src }}" alt="{{ column.image.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+						{% endif %}
+					 </div>
+					 <div class="cst-con-grp">
+						<h3>
+						   <span{% if column.redirect_icon %} class="has_icon"{% endif %}>{{ column.menu_text }}</span> 
+						   <i class="fa fa-arrow-right"></i>
+						</h3>
+						<div class="cst-btm-con">
+						   {{ column.bottom_text }}
+						</div>
+					 </div>
+				  </a>
+				  <style>
+					 @media (max-width: 990px) and (min-width: 768px){                      
+
+						.cst-child-item-{{ loop.index }} {
+						   order : {{ column.order_tab }};
+						}
+
+					 }
+				  </style>
+			   </li>
+			   {% endfor %}               
+
+			</div>   
+
+		 </ul>
+	  </li> 
+	  {% endfor %}
+   </ul>
+
+   <style>
+	  ul.menu__wrapper.no-list.tab {
+		 display: none;
+	  }      
+
+	  @media (max-width: 992px){
+		 .menu.cst-hdr-top-menu .hidden-phone {
+			display: none!important;
+		 }
+	  }     
+
+	  @media (max-width: 990px) and (min-width: 768px){
+		 .menu__wrapper.no-list.visible-phone.clearfix {
+			display: none !important;
+		 }
+		 ul.menu__wrapper.no-list.tab {
+			display: block;
+		 }
+		 ul.menu__wrapper.no-list.tab ul  .cst-split-col {
+			display: flex;
+			flex-wrap: wrap;
+			width: 100% !important;
+		 }
+		 ul.menu__wrapper.no-list.tab ul .cst-split-col li {
+			width: 50%;                        
+		 }  
+		 .cst-hdr-top-menu>ul>li.menu-item>ul.cst-child-emnu-wrapper {
+			padding: 20px 0;
+		 }
+		 .cst-hdr-top-menu>ul>li.menu-item>ul.cst-child-emnu-wrapper>.cst-split-col>li>a {     
+			height: 100%;
+		 }
+	  }
+
+	  @media (max-width: 767px){
+		 .cst-hdr-top-menu>ul>li.menu-item>ul.cst-child-emnu-wrapper > .cst-split-col {
+			float: none !important;
+			width: 100% !important;
+			padding-top: 0 !important;
+		 }
+		 .cst-hdr-top-menu>ul>li.menu-item>ul.cst-child-emnu-wrapper>.cst-split-col>li>a>.cst-con-grp {        
+			width: calc(100% - 70px);
+		 }
+		 .cst-hdr-top-menu>ul>li.menu-item>ul.cst-child-emnu-wrapper {
+			padding: 10px 0 !important;
+		 }         
+		 .cst-hdr-top-menu>ul>li.menu-item>ul.cst-child-emnu-wrapper>.cst-split-col>li>a {     
+			height: 100%;
+		 }
+		 .menu__wrapper.no-list.visible-phone.clearfix .cst-child-item img {         
+			vertical-align: middle;
+		 }
+	  }  
+
+	  h3 span.has_icon {
+		 position: relative;
+	  }
+
+
+	  h3 span.has_icon:after {
+		 background-image: url(https://6212555.fs1.hubspotusercontent-na1.net/hubfs/6212555/Circle%202-0_2021-%20Circle%20Website%20Refresh/Image/redirect_icon.svg);
+		 background-repeat: no-repeat;
+		 content: "";
+		 height: 16px;
+		 margin: 0 7px;
+		 position: absolute;
+		 top: auto;
+		 transform: translateY(-50%);                  
+		 width: 14px;
+		 filter: invert(1);
+		 bottom: -5px;
+	  }
+	  .custom-menu-primary nav.cst-hdr-top-menu>ul>li.menu-item>ul.cst-child-emnu-wrapper>.cst-split-col>li>a:hover span.has_icon:after , nav.cst-hdr-top-menu>ul>li.menu-item>ul.cst-child-emnu-wrapper>.cst-split-col>li>a:hover span.has_icon:after{
+		 background-image: url(https://6212555.fs1.hubspotusercontent-na1.net/hubfs/6212555/Circle%202-0_2021-%20Circle%20Website%20Refresh/Image/redirect_red_icon.svg);
+		 filter: none;
+	  }
+
+	  span.has_icon+i {
+		 visibility: hidden;        
+		 opacity: 0;
+		 pointer-events: none;             
+	  }
+
+   </style>
+
+
+
+   <ul class="menu__wrapper no-list visible-phone clearfix">
+
+	  {% for item in module.add_child_menu %}
+	  <li class="menu-item">
+		 <a class="menu-link mob-menu-link" href="javascript:;"><span class="text">{{ item.link_text }}</span> <i class="fa fa-angle-down"></i></a>
+
+		 <ul class="cst-child-emnu-wrapper">
+			<div class="cst-split-col">
+			   {% for item2 in item.add_child_1_menu %}
+			   {% if loop.index % 3 == 1 %}
+			   <li class="cst-child-item">
+				  {% set href = item2.link.url.href %}
+				  {% if item2.link.url.type is equalto "EMAIL_ADDRESS" %}
+				  {% set href = "mailto:" + href %}
+				  {% endif %}
+				  <a class="menu-link" href="{{ href }}"
+					 {% if item2.link.open_in_new_tab %}target="_blank"{% endif %}
+					 {% if item2.link.rel %}rel="{{ item2.link.rel }}"{% endif %}
+					 >
+					 <div class="cst-img">
+						{% if item2.image.src %}
+						{% set sizeAttrs = 'width="{{ item2.image.width }}" height="{{ item2.image.height }}"' %}
+						{% if item2.image.size_type == 'auto' %}
+						{% set sizeAttrs = 'width="{{ item2.image.width }}" height="{{ item2.image.height }}" style="max-width: 100%; height: auto;"' %}
+						{% elif item2.image.size_type == 'auto_custom_max' %}
+						{% set sizeAttrs = 'width="{{ item2.image.max_width }}" height="{{ item2.image.max_height }}" style="max-width: 100%; height: auto;"' %}
+						{% endif %}
+						{% set loadingAttr = item2.image.loading != 'disabled' ? 'loading="{{ item2.image.loading }}"' : '' %}
+						<img src="{{ item2.image.src }}" alt="{{ item2.image.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+						{% endif %}
+					 </div>
+					 <div class="cst-con-grp">
+						<h3>
+						   <span{% if item2.redirect_icon %} class="has_icon"{% endif %}>{{ item2.menu_text }}</span> 
+						   <i class="fa fa-arrow-right"></i>
+						</h3>
+						<div class="cst-btm-con">
+						   {{ item2.bottom_text }}
+						</div>
+					 </div>
+				  </a>
+			   </li>
+			   {% endif %}
+			   {% endfor %}
+			</div>
+			<div class="cst-split-col">
+			   {% for item2 in item.add_child_1_menu %}
+			   {% if loop.index % 3 == 2 %}            
+			   <li class="cst-child-item">
+				  {% set href = item2.link.url.href %}
+				  {% if item2.link.url.type is equalto "EMAIL_ADDRESS" %}
+				  {% set href = "mailto:" + href %}
+				  {% endif %}
+				  <a class="menu-link" href="{{ href }}"
+					 {% if item2.link.open_in_new_tab %}target="_blank"{% endif %}
+					 {% if item2.link.rel %}rel="{{ item2.link.rel }}"{% endif %}
+					 >
+					 <div class="cst-img">
+						{% if item2.image.src %}
+						{% set sizeAttrs = 'width="{{ item2.image.width }}" height="{{ item2.image.height }}"' %}
+						{% if item2.image.size_type == 'auto' %}
+						{% set sizeAttrs = 'width="{{ item2.image.width }}" height="{{ item2.image.height }}" style="max-width: 100%; height: auto;"' %}
+						{% elif item2.image.size_type == 'auto_custom_max' %}
+						{% set sizeAttrs = 'width="{{ item2.image.max_width }}" height="{{ item2.image.max_height }}" style="max-width: 100%; height: auto;"' %}
+						{% endif %}
+						{% set loadingAttr = item2.image.loading != 'disabled' ? 'loading="{{ item2.image.loading }}"' : '' %}
+						<img src="{{ item2.image.src }}" alt="{{ item2.image.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+						{% endif %}
+					 </div>
+					 <div class="cst-con-grp">
+						<h3>
+						   <span{% if item2.redirect_icon %} class="has_icon"{% endif %}>{{ item2.menu_text }}</span> 
+						   <i class="fa fa-arrow-right"></i>
+						</h3>
+						<div class="cst-btm-con">
+						   {{ item2.bottom_text }}
+						</div>
+					 </div>
+				  </a>
+			   </li>           
+			   {% endif %}
+			   {% endfor %}
+			</div>
+			<div class="cst-split-col">
+			   {% for item2 in item.add_child_1_menu %}
+			   {% if loop.index % 3 == 0 %}            
+			   <li class="cst-child-item">
+				  {% set href = item2.link.url.href %}
+				  {% if item2.link.url.type is equalto "EMAIL_ADDRESS" %}
+				  {% set href = "mailto:" + href %}
+				  {% endif %}
+				  <a class="menu-link" href="{{ href }}"
+					 {% if item2.link.open_in_new_tab %}target="_blank"{% endif %}
+					 {% if item2.link.rel %}rel="{{ item2.link.rel }}"{% endif %}
+					 >
+					 <div class="cst-img">
+						{% if item2.image.src %}
+						{% set sizeAttrs = 'width="{{ item2.image.width }}" height="{{ item2.image.height }}"' %}
+						{% if item2.image.size_type == 'auto' %}
+						{% set sizeAttrs = 'width="{{ item2.image.width }}" height="{{ item2.image.height }}" style="max-width: 100%; height: auto;"' %}
+						{% elif item2.image.size_type == 'auto_custom_max' %}
+						{% set sizeAttrs = 'width="{{ item2.image.max_width }}" height="{{ item2.image.max_height }}" style="max-width: 100%; height: auto;"' %}
+						{% endif %}
+						{% set loadingAttr = item2.image.loading != 'disabled' ? 'loading="{{ item2.image.loading }}"' : '' %}
+						<img src="{{ item2.image.src }}" alt="{{ item2.image.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+						{% endif %}
+					 </div>
+					 <div class="cst-con-grp">
+						<h3>
+						   <span{% if item2.redirect_icon %} class="has_icon"{% endif %}>{{ item2.menu_text }}</span> 
+						   <i class="fa fa-arrow-right"></i>
+						</h3>
+						<div class="cst-btm-con">
+						   {{ item2.bottom_text }}
+						</div>
+					 </div>
+				  </a>
+			   </li>           
+			   {% endif %}
+			   {% endfor %}
+			</div>
+		 </ul>
+	  </li> 
+	  {% endfor %}
+   </ul>
+</nav>
+
+{% require_js %}
+<script>
+   $('.mob-menu-link').click(function(){
+	  $(this).next().slideToggle();
+   });
+
+</script>
+{% end_require_js %}
+
+

@@ -1,0 +1,95 @@
+<div class="cst-abt-tabber-grp">
+   <div class="page-center">
+      <div class="row">
+         <div class="cst-tab-left col-md-3">
+            <ul class="tabs">
+               {% for item in module.add_tabber_item %}
+               <li class="tab-link {% if loop.first %}current{% endif %}" data-tab="tab-{{ loop.index }}"><a href="javascript:;"><span>{{ item.tab_title }}</span> <i class="fas fa-angle-right"></i></a>
+               </li>
+               {% endfor %}
+            </ul>
+         </div>
+         <div class="cst-tab-right col-md-9">
+            {% for item in module.add_tabber_item %}
+            <div id="tab-{{ loop.index }}" class="tab-content {% if loop.first %}current{% endif %}">
+               {% if item.content_type == "fullwidth" %}
+               {% if item.title %} <h2 class="cst-col-title">{{ item.title }}</h2>{% endif %}
+               <div class="cst-fll-grp">
+                  {{ item.fullwidth_content }}
+               </div>
+               {% endif %}
+               {% if item.content_type == "two-col-eq" %}
+               {% for item2 in item.two_column_equal %}
+               <div class="cst-two-col-eq-grp">
+                  {% if item.title %} <h2 class="cst-col-title">{{ item.title }}</h2>{% endif %}
+                  <div class="row align-items-center">
+                     {% if item2.image_alignment == "left" %}
+                     <div class="cst-image-col {% if item2.column_width == "l50-r50" %}col-md-6{% endif %}{% if item2.column_width == "l58-r41" %}col-md-7{% endif %}{% if item2.column_width == "l41-r58" %}col-md-5{% endif %}{% if item2.column_width == "l66-r33" %}col-md-4{% endif %}  ">
+                        {% if item2.image.src %}
+                        {% set sizeAttrs = 'width="{{ item2.image.width }}" height="{{ item2.image.height }}"' %}
+                        {% if item2.image.size_type == 'auto' %}
+                        {% set sizeAttrs = 'width="{{ item2.image.width }}" height="{{ item2.image.height }}" style="max-width: 100%; height: auto;"' %}
+                        {% elif item2.image.size_type == 'auto_custom_max' %}
+                        {% set sizeAttrs = 'width="{{ item2.image.max_width }}" height="{{ item2.image.max_height }}" style="max-width: 100%; height: auto;"' %}
+                        {% endif %}
+                        {% set loadingAttr = item2.image.loading != 'disabled' ? 'loading="{{ item2.image.loading }}"' : '' %}
+                        <img src="{{ item2.image.src }}" alt="{{ item2.image.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+                        {% else %}
+                        {{ item2.column_1_content }}
+                        {% endif %}
+                     </div>
+                     {% endif %}
+                     <div class="cst-content-col {% if item2.column_width == "l50-r50" %}col-md-6{% endif %}{% if item2.column_width == "l58-r41" %}col-md-5{% endif %}{% if item2.column_width == "l41-r58" %}col-md-7{% endif %}{% if item2.column_width == "l66-r33" %}col-md-8{% endif %}">
+                        {{ item2.column_2_content }}
+                     </div>
+                     {% if item2.image_alignment == "right" %}
+                     <div class="cst-image-col {% if item2.column_width == "l50-r50" %}col-md-6{% endif %}{% if item2.column_width == "l58-r41" %}col-md-7{% endif %}{% if item2.column_width == "l41-r58" %}col-md-5{% endif %}{% if item2.column_width == "l66-r33" %}col-md-4{% endif %}">
+                        {% if item2.image.src %}
+                        {% set sizeAttrs = 'width="{{ item2.image.width }}" height="{{ item2.image.height }}"' %}
+                        {% if item2.image.size_type == 'auto' %}
+                        {% set sizeAttrs = 'width="{{ item2.image.width }}" height="{{ item2.image.height }}" style="max-width: 100%; height: auto;"' %}
+                        {% elif item2.image.size_type == 'auto_custom_max' %}
+                        {% set sizeAttrs = 'width="{{ item2.image.max_width }}" height="{{ item2.image.max_height }}" style="max-width: 100%; height: auto;"' %}
+                        {% endif %}
+                        {% set loadingAttr = item2.image.loading != 'disabled' ? 'loading="{{ item2.image.loading }}"' : '' %}
+                        <img src="{{ item2.image.src }}" alt="{{ item2.image.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+                        {% else %}
+                        {{ item2.column_1_content }}
+                        {% endif %}
+                     </div>
+                     {% endif %}
+                  </div>
+               </div>
+               {% if item2.apply_bottom_border %}
+               <div class="cst-btm-brder">
+
+               </div>
+               {% endif %}
+               {% endfor %}
+               {% endif %}
+
+            </div>
+            {% endfor %}
+         </div>
+      </div>
+   </div>
+</div>
+
+
+{% require_css %}
+
+<style>
+   {% scope_css %}
+   @media (min-width:768px){
+      .cst-abt-tabber-grp {
+         {{ module.style.desktop_spacing.css }}
+      }
+   }
+   @media (max-width:767px){
+      .cst-abt-tabber-grp {
+         {{ module.style.mobile_spacing.css }}
+      }
+   }
+   {% end_scope_css %} 
+</style>
+{% end_require_css %}

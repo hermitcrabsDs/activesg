@@ -1,0 +1,49 @@
+[ {
+  "id" : "579fd716-b4d3-cb62-1883-d5626f055abe",
+  "name" : "facebook_link",
+  "display_width" : null,
+  "label" : "Facebook link",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "https://www.facebook.com/activesgcircle/"
+}, {
+  "id" : "a3ae5f06-156e-ea44-f6d6-7d5dbb197c2e",
+  "name" : "youtube_link",
+  "display_width" : null,
+  "label" : "Youtube link",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "https://www.youtube.com/@ActiveSGCircle"
+}, {
+  "id" : "4b08f5f5-b870-fa69-c2d0-b5ff03a79957",
+  "name" : "instagram_link",
+  "display_width" : null,
+  "label" : "Instagram link",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "https://www.instagram.com/activesgcircle/"
+}, {
+  "id" : "aa920f45-f7a3-d283-dbf9-d156bcc09951",
+  "name" : "telegram_link",
+  "display_width" : null,
+  "label" : "Telegram link",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "https://web.telegram.org/k/#@activesgcircle"
+} ]

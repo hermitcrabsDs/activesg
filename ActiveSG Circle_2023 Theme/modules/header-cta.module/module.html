@@ -1,0 +1,54 @@
+
+<div class="button_wrapper">
+   {% for item in module.button_group %}
+   <div class="button_item">
+      {% if item.button_type =="Standard Button"%}
+      {% set href = item.button_link.url.href %}
+      {% if item.button_link.url.type is equalto "EMAIL_ADDRESS" %}
+      {% set href = "mailto:" + href %}
+      {% endif %}
+      <a href="{{ href }}" class="{{ item.button_style }} {% if item.add_arrow %}arrow {% endif %} btn"
+         {% if item.button_link.open_in_new_tab %}target="_blank"{% endif %}
+         {% if item.button_link.rel %}rel="{{ item.button_link.rel }}"{% endif %}
+         >
+         {{ item.button_text }}
+      </a>
+      {% elif item.button_type =="bookmark" %}
+      <a href="#{{ item.bookmark_id }}" class="{{ item.button_style }} btn"
+         >{{ item.button_text }}</a>
+      {% else %}
+      {% cta guid="{{ item.cta_button }}" %}
+      {% endif %}
+   </div>
+   {% endfor %}
+   <button class="searchButton button">
+      <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 13 13" fill="none">
+         <path opacity="0.8" d="M12.7833 11.765L9.88 8.86167C10.595 7.93 11.0067 6.78167 11.0067 5.50333C11.0067 2.47 8.55833 0 5.50333 0C2.44833 0 0 2.47 0 5.50333C0 8.53667 2.47 11.0067 5.50333 11.0067C6.76 11.0067 7.93 10.5733 8.86167 9.88L11.765 12.7833C12.0467 13.065 12.5017 13.065 12.7833 12.7833C13.065 12.5017 13.065 12.0467 12.7833 11.765ZM5.50333 9.57667C3.25 9.57667 1.45167 7.75667 1.45167 5.525C1.45167 3.29333 3.27167 1.45167 5.50333 1.45167C7.735 1.45167 9.555 3.27167 9.555 5.50333C9.555 7.735 7.75667 9.57667 5.50333 9.57667Z" fill="#EE2200"/>
+      </svg>
+   </button>
+</div>
+{% require_css %}
+<style>
+   {% scope_css %}
+   .button_wrapper {
+      display: flex;
+      align-items: center;
+      height: 100%;
+   }
+   .button_item .btn{
+      padding: 5px 20px;
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 21px;
+   }
+
+   @media (max-width: 991px) and (min-width: 768px) {
+      .button_item .btn {
+         padding: 5px 15px;
+         font-size: 12px;
+      }
+   }
+
+   {% end_scope_css %}
+</style>
+{% end_require_css%}

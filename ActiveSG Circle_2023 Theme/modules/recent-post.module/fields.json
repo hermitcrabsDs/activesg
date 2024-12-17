@@ -1,0 +1,324 @@
+[ {
+  "id" : "052b7a2e-d9be-8f4e-dabe-63c7343dcaf8",
+  "name" : "title",
+  "display_width" : null,
+  "label" : "Title",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "Highlights"
+}, {
+  "id" : "5ed010fd-c211-b3cf-04fe-a839ed8cce95",
+  "name" : "choose_post_type",
+  "display_width" : null,
+  "label" : "Choose Post Type",
+  "required" : false,
+  "locked" : false,
+  "display" : "select",
+  "choices" : [ [ "blog", "Blog" ], [ "custom", "Custom" ] ],
+  "multiple" : false,
+  "reordering_enabled" : true,
+  "preset" : null,
+  "type" : "choice",
+  "default" : "custom"
+}, {
+  "id" : "328937c2-29fd-8158-2fba-f25f19fde347",
+  "name" : "blog",
+  "display_width" : null,
+  "label" : "Blog",
+  "required" : false,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : null,
+    "controlling_field_path" : "choose_post_type",
+    "controlling_value_regex" : "blog",
+    "property" : null,
+    "operator" : "EQUAL",
+    "access" : null
+  },
+  "type" : "blog",
+  "default" : 38934888388
+}, {
+  "id" : "ccc88bf6-d40b-7dbf-f8d8-3b88bc305fe4",
+  "name" : "style",
+  "display_width" : null,
+  "label" : "Style",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "7c990c3d-5adf-98f6-5e59-af06a18b777e",
+    "name" : "spacing",
+    "display_width" : null,
+    "label" : "Spacing",
+    "required" : false,
+    "locked" : false,
+    "type" : "spacing",
+    "default" : {
+      "margin" : {
+        "top" : {
+          "value" : -100,
+          "units" : "px"
+        },
+        "bottom" : {
+          "value" : null,
+          "units" : null
+        }
+      }
+    }
+  } ],
+  "tab" : "STYLE",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "default" : {
+    "spacing" : {
+      "margin" : {
+        "top" : {
+          "value" : -100,
+          "units" : "px"
+        },
+        "bottom" : {
+          "value" : null,
+          "units" : null
+        }
+      }
+    }
+  }
+}, {
+  "id" : "4b2186b9-9acb-ae13-4b44-baf42c6e313c",
+  "name" : "number_of_post",
+  "display_width" : null,
+  "label" : "Number of Post",
+  "required" : false,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : null,
+    "controlling_field_path" : "choose_post_type",
+    "controlling_value_regex" : "blog",
+    "property" : null,
+    "operator" : "EQUAL",
+    "access" : null
+  },
+  "display" : "text",
+  "step" : 1,
+  "type" : "number",
+  "default" : 8
+}, {
+  "id" : "7d60fc1f-16a0-a79c-f9da-2e53ebedc459",
+  "name" : "custom_post",
+  "display_width" : null,
+  "label" : "Custom Post",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : "a8c3a86c-88b9-802b-5542-b40b0685090c",
+    "default" : 5
+  },
+  "visibility" : {
+    "controlling_field" : null,
+    "controlling_field_path" : "choose_post_type",
+    "controlling_value_regex" : "custom",
+    "property" : null,
+    "operator" : "EQUAL",
+    "access" : null
+  },
+  "children" : [ {
+    "id" : "1b7b8a40-5afb-a051-411f-8641869e14ef",
+    "name" : "image",
+    "display_width" : null,
+    "label" : "Image",
+    "required" : false,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : true,
+    "show_loading" : false,
+    "type" : "image",
+    "default" : {
+      "size_type" : "auto",
+      "src" : "https://6212555.fs1.hubspotusercontent-na1.net/hubfs/6212555/AcademiesClubs_2023%20Theme/images/girl-playing-tennis.jpg",
+      "alt" : "girl-playing-tennis",
+      "loading" : "lazy",
+      "width" : 106,
+      "height" : 106,
+      "max_width" : 106,
+      "max_height" : 106
+    }
+  }, {
+    "id" : "dceac40e-3813-f256-1ab0-9d3d4fff5092",
+    "name" : "link",
+    "display_width" : null,
+    "label" : "Link",
+    "required" : false,
+    "locked" : false,
+    "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION", "PHONE_NUMBER", "WHATSAPP_NUMBER" ],
+    "show_advanced_rel_options" : false,
+    "type" : "link",
+    "default" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    }
+  }, {
+    "id" : "a8c3a86c-88b9-802b-5542-b40b0685090c",
+    "name" : "title",
+    "display_width" : null,
+    "label" : "Title",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "West Master Schedule Table Tennis Competition 2022"
+  }, {
+    "id" : "9ce33b8e-4bf3-9ee6-aab8-2339384e92d2",
+    "name" : "date",
+    "display_width" : null,
+    "label" : "Date",
+    "required" : false,
+    "locked" : false,
+    "type" : "date",
+    "default" : 1654099200000
+  }, {
+    "id" : "59db9dc2-518e-87e4-f5d8-490539432170",
+    "name" : "time",
+    "display_width" : null,
+    "label" : "Time",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "11 Am - 12 pm"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "default" : [ {
+    "image" : {
+      "size_type" : "auto",
+      "src" : "https://6212555.fs1.hubspotusercontent-na1.net/hubfs/6212555/AcademiesClubs_2023%20Theme/images/girl-playing-tennis.jpg",
+      "alt" : "girl-playing-tennis",
+      "loading" : "lazy",
+      "width" : 106,
+      "height" : 106,
+      "max_width" : 106,
+      "max_height" : 106
+    },
+    "link" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    },
+    "title" : "West Master Schedule Table Tennis Competition 2022",
+    "date" : 1654099200000,
+    "time" : "11 Am - 12 pm"
+  }, {
+    "image" : {
+      "size_type" : "auto",
+      "src" : "https://6212555.fs1.hubspotusercontent-na1.net/hubfs/6212555/AcademiesClubs_2023%20Theme/images/girl-playing-tennis.jpg",
+      "alt" : "girl-playing-tennis",
+      "loading" : "lazy",
+      "width" : 106,
+      "height" : 106,
+      "max_width" : 106,
+      "max_height" : 106
+    },
+    "link" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    },
+    "title" : "West Master Schedule Table Tennis Competition 2022",
+    "date" : 1654099200000,
+    "time" : "11 Am - 12 pm"
+  }, {
+    "image" : {
+      "size_type" : "auto",
+      "src" : "https://6212555.fs1.hubspotusercontent-na1.net/hubfs/6212555/AcademiesClubs_2023%20Theme/images/girl-playing-tennis.jpg",
+      "alt" : "girl-playing-tennis",
+      "loading" : "lazy",
+      "width" : 106,
+      "height" : 106,
+      "max_width" : 106,
+      "max_height" : 106
+    },
+    "link" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    },
+    "title" : "West Master Schedule Table Tennis Competition 2022",
+    "date" : 1654099200000,
+    "time" : "11 Am - 12 pm"
+  }, {
+    "image" : {
+      "size_type" : "auto",
+      "src" : "https://6212555.fs1.hubspotusercontent-na1.net/hubfs/6212555/AcademiesClubs_2023%20Theme/images/girl-playing-tennis.jpg",
+      "alt" : "girl-playing-tennis",
+      "loading" : "lazy",
+      "width" : 106,
+      "height" : 106,
+      "max_width" : 106,
+      "max_height" : 106
+    },
+    "link" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    },
+    "title" : "West Master Schedule Table Tennis Competition 2022",
+    "date" : 1654099200000,
+    "time" : "11 Am - 12 pm"
+  }, {
+    "image" : {
+      "size_type" : "auto",
+      "src" : "https://6212555.fs1.hubspotusercontent-na1.net/hubfs/6212555/AcademiesClubs_2023%20Theme/images/girl-playing-tennis.jpg",
+      "alt" : "girl-playing-tennis",
+      "loading" : "lazy",
+      "width" : 106,
+      "height" : 106,
+      "max_width" : 106,
+      "max_height" : 106
+    },
+    "link" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    },
+    "title" : "West Master Schedule Table Tennis Competition 2022",
+    "date" : 1654099200000,
+    "time" : "11 Am - 12 pm"
+  } ]
+} ]
